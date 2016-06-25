@@ -10,7 +10,7 @@ permalink: /npm/
         {% for package in site.npm %}
             <li>
                 <span>{{ package.date | date_to_string }} &raquo;</span>
-                <a href="{{ package.url }}">{{ package.title }}</a> <br>
+                <a href="{{ package.url }}" class="postEvent">{{ package.title }}</a> <br>
                 <span>{{ package.description }}</span>
             </li>
         {% endfor %}

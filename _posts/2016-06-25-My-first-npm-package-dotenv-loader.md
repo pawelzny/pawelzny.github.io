@@ -13,4 +13,4 @@ I just published my first NPM package.
 
 Its purpose is to load and parse .env file, and support easy access to environment variables.
 
-Read more: [dotenv-loader](/npm/dotenv-loader)
+Read more: <a href="/npm/dotenv-loader" class="postEvent">Dotenv-loader</a>

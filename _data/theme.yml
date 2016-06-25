@@ -21,10 +21,10 @@ social:
 # "Hi, I'm _______"
 name: Pawelzny
 email: pawel.zny@gmail.com
-tagline: ""
+tagline: "NodeJS, Python, PHP"
 
 # Google Analytics key, leave blank to ignore
-google_analytics_key: UA-xxxx-x
+google_analytics_key: UA-55876783-5
 
 # Toggle "Postings are my own" disclaimer in footer
 show_disclaimer: true
