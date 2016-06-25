@@ -1,0 +1,6 @@
+# General Jekyll Config
+#highlighter: pygments.rb
+url: http://pawelzny.com
+lsi: false
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+include: [npm]
