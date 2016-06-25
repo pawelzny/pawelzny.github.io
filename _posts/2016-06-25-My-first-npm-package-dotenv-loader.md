@@ -1,8 +1,12 @@
 ---
 layout: post
 title: My first NPM package "Dotenv-loader"
+date: 2016-06-25
 categories:
-- blog
+    - blog
+tags:
+    - npm
+    - env
 ---
 
 I just published my first NPM package.

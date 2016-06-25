@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Dotenv-loader NPM package
+title: Dotenv-loader
+date: 2016-06-25
 categories:
-- npm
+    - npm
 permalink: /npm/dotenv-loader
+description: Load environment variables from .env file, and set to process.env Array
 ---
 
 **Load environment variables from .env file, and set to process.env Array.**
@@ -79,17 +81,17 @@ process.env['WELCOME_MSG']; // Hi there!
 ```
 All your variable keys will be normalized to uppercase, but when you use env.get() method you can use upper and lower case.
 
-## Throw error if environment variable does not exists
+## Throw error if environment variable does not exist
 
 You can pass callback function as last parameter. It will be called asynchronously, and still return a value.
 
 ```javascript
 let
-    val = env.get('THIS_DO_NOT_EXISTS', function (val, key, defaults) {
+    val = env.get('NOT_EXIST', function (val, key, defaults) {
         if (val === null) {
-            throw Error('Env variable not exists');
+            throw Error('Env variable does not exist');
         }
-    }); // throws [Error: Env variable not exists']
+    }); // throws [Error: Env variable does not exist']
 ```
 
 Callback function takes three parameters:
@@ -97,6 +99,6 @@ Callback function takes three parameters:
 ```javascript
 // for previous example:
 val === null // parsed value
-key === 'THIS_DO_NOT_EXISTS' // given key
-defaults === 'default value' // given defaults
+key === 'NOT_EXIST' // given key
+defaults === undefined // optional default parameter does not exist
 ```
