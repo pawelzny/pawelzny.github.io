@@ -6,7 +6,8 @@ categories:
     - blog
 tags:
     - npm
-    - env
+    - nodejs
+    - environment
 ---
 
 I just published my first NPM package.

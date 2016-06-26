@@ -6,13 +6,18 @@ categories:
     - npm
 permalink: /npm/dotenv-loader
 description: Load environment variables from .env file, and set to process.env Array
+tags:
+    - npm
+    - nodejs
+    - environment
 ---
 
 **Load environment variables from .env file, and set to process.env Array.**
 Under MIT license.
 
 Sources:
-[npm](https://www.npmjs.com/package/dotenv-loader), [github](https://github.com/pawelzny/dotenv-loader)
+<a href="https://www.npmjs.com/package/dotenv-loader" class="sourceEvent">npmjs.org</a>
+<a href="https://github.com/pawelzny/dotenv-loader" class="sourceEvent">github.com</a>
 
 ---
 
@@ -52,7 +57,8 @@ const
     },
     env = require('dotenv-loader');
 
-env.load(optionalSettings); // There you go. Your environment variables are now available globally.
+env.load(optionalSettings); // There you go.
+// Your environment variables are now available globally.
 ```
 
 ## Get environments
@@ -70,7 +76,7 @@ To get environment value (node predefine included):
 ```javascript
 const
     env = require('dotenv-loader'),
-    myVariable = env.get('WELCOME_MSG', 'Or default value if WELCOME_MSG is not set');
+    myVariable = env.get('WELCOME_MSG', 'Or default value');
 
 console.log(myVariable); // Hi there!
 ```
