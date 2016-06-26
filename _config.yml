@@ -5,3 +5,5 @@ exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
 collections:
     npm:
         output: true
+gems:
+    - jekyll-sitemap

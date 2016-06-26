@@ -13,7 +13,7 @@ social:
   twitter: pawelzny
   #facebook:
   #tumblr:
-  #linkedin:
+  linkedin: pawelzadrozny
   #gplus:
   gravatar: 931fa7d2c1dc229a2986168fd1dfc8e6
   #flickr: johndoe
@@ -30,4 +30,4 @@ google_analytics_key: UA-55876783-5
 show_disclaimer: true
 
 # Toggle link/icon to view atom feed (/atom.xml) in sidebar
-show_atom_feed: false
+show_atom_feed: true
