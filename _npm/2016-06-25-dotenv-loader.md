@@ -16,8 +16,10 @@ tags:
 Under MIT license.
 
 Sources:
-<a href="https://www.npmjs.com/package/dotenv-loader" class="sourceEvent">npmjs.org</a>
+<a href="https://www.npmjs.com/package/dotenv-loader" class="sourceEvent">npmjs.org</a> |
 <a href="https://github.com/pawelzny/dotenv-loader" class="sourceEvent">github.com</a>
+
+<img src="https://nodei.co/npm/dotenv-loader.png?downloads=true&downloadRank=true&stars=true" class="center-block">
 
 ---
 
