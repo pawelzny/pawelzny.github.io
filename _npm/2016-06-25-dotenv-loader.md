@@ -5,7 +5,7 @@ date: 2016-06-25
 categories:
     - npm
 permalink: /npm/dotenv-loader
-description: Dotenv-loader module helps setting environment variables on runtime.
+description: Dotenv-loader module helps setting environment variables from .env file on runtime.
 tags:
     - npm
     - nodejs
@@ -13,11 +13,11 @@ tags:
 ---
 
 ## Version
-**1.1.0**
+**1.2.0**
 
 ## Description
 
-Dotenv-loader module helps setting environment variables on runtime.
+Dotenv-loader module helps setting environment variables from .env file on runtime.
 You do not need to preset environment variables when calling your script with terminal or supervisor.
 
 Make sure, that dotenv-loader is required on the begining of your main script.
@@ -74,7 +74,6 @@ const
     env = require('dotenv-loader');
 
 env.load(optionalSettings).on('error', (err) => console.log(err));
-// There you go.
 // Your environment variables are now available globally.
 ```
 
@@ -140,7 +139,9 @@ env.load().on('error', (err) => throw Error(err));
 
 // Rest of your code
 
-let nodeEnv = env.get('NODE_ENV', (val) => console.log('Current environment is: %s', val));
+let nodeEnv = env.get('NODE_ENV', (val) => {
+    console.log('Current environment is: %s', val)
+});
 
 if (nodeEnv === 'development') {
     console.log('I am in development mode');
