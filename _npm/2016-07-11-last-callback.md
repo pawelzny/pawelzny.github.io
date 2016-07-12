@@ -13,25 +13,27 @@ tags:
 ---
 
 ## Version
-**1.0.0**
+**1.0.1**
 
 ## Description
 
-Easly get last argument and call if it is a function.
-You do not need to check last argument manually any more.
+Get and call last given argument if is a function. You do not need to check last argument manually any more.
+All you need to do is to pass arguments array to this little module, then call it, or bind with `this` context.
+Last-callback always return a function with build in validation. Last not callable argument will be omitted without throwing any exception.
 
-All you need to do is to pass arguments array to this little module,
-then call it, or bind with `this` context.
+last-callback is compatybile with ES5 and latest.
 
-It is compatybile with ES5 and above.
+[![npm](https://img.shields.io/npm/l/last-callback.svg?maxAge=2592000)]()
+[![npm](https://img.shields.io/npm/dt/last-callback.svg?maxAge=2592000)]()
+[![node](https://img.shields.io/node/v/last-callback.svg?maxAge=2592000)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg?maxAge=2592000)]()
+[![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
 
 Sources:
 <a href="https://www.npmjs.com/package/last-callback" class="sourceEvent">npmjs.org</a> |
 <a href="https://github.com/pawelzny/last-callback" class="sourceEvent">github.com</a>
 
 <img src="https://nodei.co/npm/last-callback.png?downloads=true&downloadRank=true&stars=true" class="center-block">
-
-<img src="/assets/img/last-callback_coverage.png" class="center-block">
 ---
 
 ## Requirements
@@ -52,7 +54,7 @@ last-callback respects: bind, call, and apply methods;
 
 ### ES6 Style
 
-If you are using `NodeJS >= 6.2.0` You should definitly use ES6 style with spread operators.
+If you are using `NodeJS >= 6.2` You should definitly use __ES6 style__ with spread operators.
 
 ```javascript
 const lastCallback = require('last-callback');
@@ -70,7 +72,7 @@ myFunc('test value', function (param) {
 
 ### ES5 Style
 
-If you are still using `NodeJS < 6.2.0`, i.e. `odeJS 4.4.7 LTS`, you can use ES5 style.
+If you are still using `NodeJS < 6.2.0`, i.e. `NodeJS 4.4.7 LTS`, you can use __ES5 style__.
 
 
 ```javascript
@@ -93,11 +95,11 @@ myFunc('test value', function (param) {
 var lastCallback = require('last-callback');
 
 function myFunc (param1) {
-    var callback = lastCallback.apply(null, arguments); // no need to bind context here
+    var callback = lastCallback.apply(null, arguments);
 
     this.contextVariable = 'this is my context';
 
-    callback.call(this, param1); // this is the place where you should bind context
+    callback.call(this, param1); // bind context if you need it
 }
 
 myFunc('test value', function (param) {
@@ -117,24 +119,24 @@ let
     iterator = 1,
     limit = 5;
 
-function myFunc (number) {
+function myFunc (iterator) {
     let callback = lastCallback(...arguments);
 
-    callback(number);
+    callback(iterator);
 }
 
-function recursiveCallabck (number) {
-    if (number === limit) {
+function recursiveCallabck (iterator) {
+    if (iterator === limit) {
         return;
     }
 
-    console.log(number);
+    console.log(iterator);
 
-    number += 1;
-    recursiveCallabck(number);
+    iterator += 1;
+    recursiveCallabck(iterator);
 }
 
-myFunc(number, recursiveCallabck);
+myFunc(iterator, recursiveCallabck);
 // console log:
 // 1
 // 2
