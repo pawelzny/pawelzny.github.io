@@ -40,7 +40,7 @@ Install package with composer: `composer require pawelzny/trimmer` and you are g
 
 ```php
 <?PHP
-use pawelzny\Trimmer\Trimmer; // use Trimmer namespace 
+use Trimmer\Trimmer; // use Trimmer namespace 
 
 // create new Trimmer object with string and length upfront
 $trim = new Trimmer('This is very long string.', $length=10);
@@ -54,7 +54,7 @@ trims long string to given length.
 
 ```php
 <?PHP
-use pawelzny\Trimmer\Trimmer; // use Trimmer namespace 
+use Trimmer\Trimmer; // use Trimmer namespace 
 
 // create new Trimmer object with string and length upfront
 $trim = new Trimmer('This is very long string.', $length=10);
