@@ -36,3 +36,8 @@ ul.posts > li > a {
 .no-block {
     display: inline-block;
 }
+
+nav > h3 {
+    text-align: center;
+    display: block;
+}

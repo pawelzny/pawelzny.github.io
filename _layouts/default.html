@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:title" content="{{ page.title }} - {{ site.data.theme.name }}">
+    <meta property="og:site_name" content="{{ site.data.theme.tagline }}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.data.theme.tagline }}{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="{% if page.title == site.data.theme.tagline %}website{% else %}article{% endif %}">
+    <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.data.theme.logo }}{% endif %}">
+    {% for category in page.categories limit:1 %}<meta property="article:section" content="{{ category }}">{% endfor %}
+    {% for tag in page.tags %}<meta property="article:tag" content="{{ tag }}">{% endfor %}
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ site.data.theme.name }}" />
-    <meta name="description" content="The blog about NodeJS, Python, PHP and related topics by {{ site.data.theme.name }}" />
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.data.theme.tagline }}{% endif %}">
     <meta name="google-site-verification" content="WYfphQvAyh3e15Lh90UvwoM6qon1aZwsCqs4TUa489o" />
 
     <title>{{ page.title }} - {{ site.data.theme.name }}</title>
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}" />
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
     <link rel="alternate" type="application/atom+xml" title="{{ site.data.theme.name }}" href="{{site.url}}/atom.xml" />
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="shortcut icon" href="{{ site.url }}/favicon.png">
 
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
-    <script src="/assets/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/all.css">
+
+    <script src="//code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="{{ site.url }}/assets/js/main.js"></script>
 </head>
 <body>
     {% include analytics.html %}
