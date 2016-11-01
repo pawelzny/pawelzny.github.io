@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (PHP) Trim strings with the integrity of words
-date: 2016-07-11
+date: 2016-11-01
 categories:
     - blog
 tags:
