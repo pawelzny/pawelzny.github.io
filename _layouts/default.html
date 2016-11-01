@@ -7,7 +7,7 @@
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.data.theme.tagline }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:type" content="{% if page.title == site.data.theme.tagline %}website{% else %}article{% endif %}">
-    <meta property="og:image" content="{{ site.url }}{% if page.image %}{{ page.image }}{% else %}{{ site.data.theme.logo }}{% endif %}">
+    <meta property="og:image" content="{% if page.image %}{{ page.image }}{% else if site.data.theme.social.gravatar %}https://s.gravatar.com/avatar/{{ site.data.theme.social.gravatar }}{% else %}{{ site.url }}{{ site.data.theme.logo }}{% endif %}">
     {% for category in page.categories limit:1 %}<meta property="article:section" content="{{ category }}">{% endfor %}
     {% for tag in page.tags %}<meta property="article:tag" content="{{ tag }}">{% endfor %}
 

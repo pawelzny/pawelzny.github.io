@@ -1,5 +1,5 @@
 # General Jekyll Config
-url: //pawelzny.com
+url: https://pawelzny.com
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
 collections:
