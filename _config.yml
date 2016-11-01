@@ -10,3 +10,5 @@ collections:
 gems:
   - jekyll-sitemap
 markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title
+post_dirs: false
