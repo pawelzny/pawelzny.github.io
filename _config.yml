@@ -3,7 +3,9 @@ url: http://pawelzny.com
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
 collections:
-    npm:
-        output: true
+  npm:
+    output: true
+  packagist:
+    output: true
 gems:
-    - jekyll-sitemap
+  - jekyll-sitemap
