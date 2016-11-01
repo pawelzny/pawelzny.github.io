@@ -68,4 +68,4 @@ This time Trimmer trims long string to given length but with integrity of words 
 `Trimmer()` has few more methods within its public API, ie. You can set on runtime
 new length or delimiter.
 
-Check my other post with documentation of [pawelzny/Trimmer]({{site.baseurl}}/packagist/trimmer).
+Check my other post with documentation of [pawelzny/Trimmer]({{site.url}}/packagist/trimmer).

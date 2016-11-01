@@ -64,7 +64,7 @@ understand, writing it again and again is not necessary.
 If you can avoid repeating your code you should do it.
 
 ## Simply as last-callback
-There is a package in NPM called [last-callback]({{site.baseurl}}/npm/last-callback) ,
+There is a package in NPM called [last-callback]({{site.url}}/npm/last-callback) ,
 which removes need of writing whole callback boilerplate. All you need to do is pass all arguments
 to lastCallback() function to get extracted last callable argument.
 
