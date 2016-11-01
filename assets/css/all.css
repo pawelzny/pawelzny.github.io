@@ -27,3 +27,7 @@ ul.posts > li > a {
         display: none;
     }
 }
+
+#bio {
+    text-align: center;
+}

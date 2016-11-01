@@ -18,10 +18,9 @@ social:
   gravatar: 931fa7d2c1dc229a2986168fd1dfc8e6
   #flickr: johndoe
 
-# "Hi, I'm _______"
 name: Paweł Zadrożny <small>@pawelzny</small>
 email: pawel.zny@gmail.com
-tagline: "NodeJS, Python, PHP"
+tagline: "All about Python, Nodejs, PHP"
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key: UA-55876783-5
