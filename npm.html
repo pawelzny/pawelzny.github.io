@@ -11,8 +11,10 @@ permalink: /npm/
         {% for package in packages %}
             <li>
                 <span>{{ package.date | date_to_string }} &raquo;</span>
-                <a href="{{ package.url }}" class="postEvent">{{ package.title }}</a> <br>
-                <span>{{ package.description }}</span>
+                <a href="{{ package.url }}" class="postEvent">
+                    {{ package.title }}
+                    <span class="description">{{ package.description }}</span>
+                </a>
             </li>
         {% endfor %}
     </ul>

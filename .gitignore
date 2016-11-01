@@ -1,4 +1,6 @@
-_site/
+/_site/
 .DS_Store
 .*.swp
-.idea
+/.idea/
+/.vscode/
+/how_to_use_jekyll.txt

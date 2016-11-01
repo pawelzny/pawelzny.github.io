@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My first NPM package "Dotenv-loader"
+title: My first NPM package "dotenv-loader"
 date: 2016-06-25
 categories:
     - blog

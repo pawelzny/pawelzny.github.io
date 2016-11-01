@@ -5,7 +5,7 @@ date: 2016-07-11
 categories:
     - npm
 permalink: /npm/last-callback
-description: Get last argument and call if it is a function.
+description: Extracts callback function from arguments.
 tags:
     - npm
     - nodejs
@@ -13,7 +13,7 @@ tags:
 ---
 
 ## Version
-**1.0.2**
+**1.0.3**
 
 ## Description
 
@@ -34,6 +34,8 @@ Sources:
 <a href="https://github.com/pawelzny/last-callback" class="sourceEvent">github.com</a>
 
 <img src="https://nodei.co/npm/last-callback.png?downloads=true&downloadRank=true&stars=true" class="center-block">
+
+
 ---
 
 ## Requirements

@@ -5,7 +5,7 @@ date: 2016-06-25
 categories:
     - npm
 permalink: /npm/dotenv-loader
-description: Dotenv-loader module helps setting environment variables from .env file on runtime.
+description: Helps with environment variables from .env file.
 tags:
     - npm
     - nodejs
@@ -23,13 +23,18 @@ You do not need to preset environment variables when calling your script with te
 Make sure, that dotenv-loader is required on the begining of your main script.
 Dotenv-loader will parse synchronously your .env file, and set environment variables to process.env array before booting App.
 
+[![npm](https://img.shields.io/npm/l/dotenv-loader.svg?maxAge=2592000)]()
+[![npm](https://img.shields.io/npm/dt/dotenv-loader.svg?maxAge=2592000)]()
+[![node](https://img.shields.io/node/v/dotenv-loader.svg?maxAge=2592000)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg?maxAge=2592000)]()
+[![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
+
 Sources:
 <a href="https://www.npmjs.com/package/dotenv-loader" class="sourceEvent">npmjs.org</a> |
 <a href="https://github.com/pawelzny/dotenv-loader" class="sourceEvent">github.com</a>
 
 <img src="https://nodei.co/npm/dotenv-loader.png?downloads=true&downloadRank=true&stars=true" class="center-block">
 
-<img src="/assets/img/dotenv-loader_coverage.png" class="center-block">
 ---
 
 ## Requirements

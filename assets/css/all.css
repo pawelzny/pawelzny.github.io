@@ -6,3 +6,24 @@
 {% include css/screen.css %}
 {% include css/layout.css %}
 {% include css/syntax.css %}
+
+#related {
+    margin-top: 40px;
+    display: block;
+    border-top: 3px solid #EEEEEE;
+}
+
+ul.posts > li {
+    display: block;
+}
+
+ul.posts > li > span,
+ul.posts > li > a {
+    display: inline;
+}
+
+@media screen and (max-width: 960px) {
+    ul.posts > li > a > span.description {
+        display: none;
+    }
+}
