@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Create callable with "last-callback"
+title: (JS) Create callable with "last-callback"
 date: 2016-07-11
 categories:
     - blog
 tags:
     - npm
     - nodejs
+    - js
     - callback
 ---
 
@@ -25,7 +26,7 @@ In result you will get something like that:
 
 ```javascript
 // Create myFunc which accept callback
-let myFunc = function (param1, param2, callback) {
+function myFunc (param1, param2, callback) {
     let error = null;
     
     /* some logic */
@@ -46,7 +47,6 @@ let myFunc = function (param1, param2, callback) {
     
     /* rest of your logic */
 }
-
 // invoke myFunc with callback
 myFunc('test', true, function(err, is_test, flag) {
     if (err) {
@@ -54,7 +54,7 @@ myFunc('test', true, function(err, is_test, flag) {
     } else {
         /* other logic */
     }
-})
+});
 ```
 
 Your callback is tightly coupled with exactly third argument in example above.
@@ -72,7 +72,7 @@ to lastCallback() function to get extracted last callable argument.
 ```javascript
 const lastCallback = require("last-callback");
 
-let myFunc = function (param1, param2) {
+function myFunc (param1, param2) {
     let error = null;
     
     // extract last arguments and make it callable
@@ -108,7 +108,7 @@ Last-callback is dependency free and do not interfere with any libraries like jQ
 ```html
 <script src="last-callback.v1.0.3.min.js"></script>
 <script>
-var myFunc = function (param1, param2) {
+function myFunc (param1, param2) {
     var error = null;
     
     // ES5 Style:

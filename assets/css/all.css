@@ -28,7 +28,8 @@ ul.posts > li > a {
     }
 }
 
-#bio {
+#bio,
+#bio > p {
     text-align: center;
 }
 

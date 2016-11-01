@@ -1,12 +1,13 @@
 ---
 layout: post
-title: My first NPM package "dotenv-loader"
+title: (JS) My first NPM package "dotenv-loader"
 date: 2016-06-25
 categories:
     - blog
 tags:
     - npm
     - nodejs
+    - js
     - environment
 ---
 
