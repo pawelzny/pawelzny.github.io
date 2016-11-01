@@ -23,11 +23,11 @@ Last-callback always return a function with build in validation. Last not callab
 
 last-callback is compatybile with ES5 and latest.
 
-[![npm](https://img.shields.io/npm/l/last-callback.svg?maxAge=2592000)]()
-[![npm](https://img.shields.io/npm/dt/last-callback.svg?maxAge=2592000)]()
-[![node](https://img.shields.io/node/v/last-callback.svg?maxAge=2592000)]()
-[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg?maxAge=2592000)]()
-[![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
+<span class="no-block">[![npm](https://img.shields.io/npm/l/last-callback.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![npm](https://img.shields.io/npm/dt/last-callback.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![node](https://img.shields.io/node/v/last-callback.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()</span>
 
 Sources:
 <a href="https://www.npmjs.com/package/last-callback" class="sourceEvent">npmjs.org</a> |
@@ -46,7 +46,7 @@ NodeJS >= 4.4.0
 
 with NPM:
 
-```javascript
+``` javascript
 npm install -S last-callback
 ```
 
@@ -58,7 +58,7 @@ last-callback respects: bind, call, and apply methods;
 
 If you are using `NodeJS >= 6.2` You should definitly use __ES6 style__ with spread operators.
 
-```javascript
+``` javascript
 const lastCallback = require('last-callback');
 
 function myFunc (param1) {
@@ -77,7 +77,7 @@ myFunc('test value', function (param) {
 If you are still using `NodeJS < 6.2.0`, i.e. `NodeJS 4.4.7 LTS`, you can use __ES5 style__.
 
 
-```javascript
+``` javascript
 var lastCallback = require('last-callback');
 
 function myFunc (param1) {
@@ -93,7 +93,7 @@ myFunc('test value', function (param) {
 
 ### ES5 Style with context
 
-```javascript
+``` javascript
 var lastCallback = require('last-callback');
 
 function myFunc (param1) {
@@ -114,7 +114,7 @@ myFunc('test value', function (param) {
 
 You can use recursive callbacks if needed.
 
-```javascript
+``` javascript
 const lastCallback = require('last-callback');
 
 let

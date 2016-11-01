@@ -9,3 +9,4 @@ collections:
     output: true
 gems:
   - jekyll-sitemap
+markdown: kramdown

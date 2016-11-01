@@ -23,11 +23,11 @@ You do not need to preset environment variables when calling your script with te
 Make sure, that dotenv-loader is required on the begining of your main script.
 Dotenv-loader will parse synchronously your .env file, and set environment variables to process.env array before booting App.
 
-[![npm](https://img.shields.io/npm/l/dotenv-loader.svg?maxAge=2592000)]()
-[![npm](https://img.shields.io/npm/dt/dotenv-loader.svg?maxAge=2592000)]()
-[![node](https://img.shields.io/node/v/dotenv-loader.svg?maxAge=2592000)]()
-[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg?maxAge=2592000)]()
-[![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()
+<span class="no-block">[![npm](https://img.shields.io/npm/l/dotenv-loader.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![npm](https://img.shields.io/npm/dt/dotenv-loader.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![node](https://img.shields.io/node/v/dotenv-loader.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![Maintenance](https://img.shields.io/maintenance/yes/2016.svg?maxAge=2592000)]()</span>
+<span class="no-block">[![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)]()</span>
 
 Sources:
 <a href="https://www.npmjs.com/package/dotenv-loader" class="sourceEvent">npmjs.org</a> |
@@ -45,7 +45,7 @@ NodeJS >= 6.2.0
 
 With NPM:
 
-```javascript
+``` javascript
 npm install -S dotenv-loader
 ```
 
@@ -59,7 +59,7 @@ npm install -S dotenv-loader
 
 *.env file Example:*
 
-```javascript
+``` javascript
 THROW_ERROS=false
 PAGE_ELEMENTS=100
 WELCOME_MSG=Hi there!
@@ -70,7 +70,7 @@ There is no need to put strings in quotes. Quotes will be included as part of ac
 
 On the begining of your main script require dotenv-loader and call `.load()` method:
 
-```javascript
+``` javascript
 const
     optionalSettings = {
         file: "./other/path/to/.env", // default: .env
@@ -102,7 +102,7 @@ Optional callback function takes three parameters:
 * @param key {String} variable key
 * @param defaults {Any} value passed as default fallback
 
-```javascript
+``` javascript
 const
     env = require('dotenv-loader'),
     myVariable = env.get('WELCOME_MSG', 'Or default value');
@@ -112,7 +112,7 @@ console.log(myVariable); // Hi there!
 
 You can still get environment variables straight from process.env
 
-```javascript
+``` javascript
 process.env['WELCOME_MSG']; // Hi there!
 process.env.WELCOME_MSG; // Hi there!
 ```
@@ -123,7 +123,7 @@ All your variable keys will be normalized to uppercase, but when you use env.get
 
 You can pass callback function as last parameter. It will be called asynchronously, and still return a value.
 
-```javascript
+``` javascript
 let
     val = env.get('NOT_EXIST', 'default val', (val, key, defaults) => {
         console.log(val); // null
@@ -138,7 +138,7 @@ let
 
 ## Full Example
 
-```javascript
+``` javascript
 const env = require('dotenv-loader');
 env.load().on('error', (err) => throw Error(err));
 

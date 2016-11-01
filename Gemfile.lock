@@ -124,6 +124,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-sitemap
+  kramdown
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
