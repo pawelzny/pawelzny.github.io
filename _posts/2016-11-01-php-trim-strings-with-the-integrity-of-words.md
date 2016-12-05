@@ -14,7 +14,7 @@ tags:
 ## Extracting substring old way
 
 Sometimes you need to trim long string to fit it in narrow html element.
-It is easy to use built in `string substr ( string $string , int $start [, int $length ] )` 
+It is easy to use built in `string substr ( string $string , int $start [, int $length ] )`
 function and extract some part of
 string ie:
 
@@ -40,32 +40,30 @@ Install package with composer: `composer require pawelzny/trimmer` and you are g
 
 ```php
 <?PHP
-use Trimmer\Trimmer; // use Trimmer namespace 
+use Trimmer\Trim;
 
-// create new Trimmer object with string and length upfront
-$trim = new Trimmer('This is very long string.', $length=10);
-echo $trim->toCharacters(); // This is ve...
+Trim::chars($string='This is very long string.',
+            $length=10)->trim(); // This is ve...
 ```
 
-Ok, this is more code then in previous example and basically does same thing, 
+Ok, this is more code then in previous example and basically does same thing,
 trims long string to given length.
 
 ### But here comes dat boi!
 
 ```php
 <?PHP
-use Trimmer\Trimmer; // use Trimmer namespace 
+use Trimmer\Trim;
 
-// create new Trimmer object with string and length upfront
-$trim = new Trimmer('This is very long string.', $length=10);
-echo $trim->toWords(); // This is...
+Trim::words($string='This is very long string.',
+            $length=10)->trim(); // This is...
 ```
 
 This time Trimmer trims long string to given length but with integrity of words in mind.
 
 ### This is not all
 
-`Trimmer()` has few more methods within its public API, ie. You can set on runtime
+Trimmer package has few more methods within its public API, ie. You can set on runtime
 new length or delimiter.
 
-Check my other post with documentation of [pawelzny/Trimmer]({{site.url}}/packagist/trimmer).
+Check my other post with documentation of <a href="/packagist/trimmer" class="postEvent">pawelzny/trimmer</a>
