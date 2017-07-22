@@ -1,11 +1,13 @@
-title: Pawelzny
-description: Python, deep-learning and chatbots.
-author: Pawel Zadrozny
+title: Everyday with python and chatbots!
+description: Python, deep-learning and chatbots
+author: Pawel Zadrozny <small>@pawelzny</small>
 github: https://github.com/pawelzny
 about: I am tech lead developer, focused on deep learning with Tensorflow, Python and Django.
 disqus_shortname: pawelzny
 google_analytics: UA-55876783-5
 avatar_url: /static/img/avatar.jpg
+
+timezone: "Europe/Warsaw"
 
 enableTags: true
 tagarray: []
@@ -44,6 +46,7 @@ baseurl: ""
 paginate: 30
 per_page: 30
 paginate_path: "/page/:num/"
+permalink: pretty
 markdown: kramdown
 gems:
   - jekyll-paginate
