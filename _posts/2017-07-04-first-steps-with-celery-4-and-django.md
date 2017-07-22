@@ -95,5 +95,8 @@ Run worker with `-A proj` argument where `proj` is your main django app director
 where `celery.py` exists.
 
 ```shell
-celery -A proj worker
+celery -A proj worker -l info
 ```
+
+Look at next article [Must have Celery 4 configuration]({% post_url 2017-07-18-must-have-celery-4-configuration %})
+. I write few more options you have to look in.
