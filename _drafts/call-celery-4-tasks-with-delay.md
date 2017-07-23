@@ -1,5 +1,5 @@
 ---
 layout: post
-title: "Celery tasks - best practices"
+title: "Call Celery 4 tasks with delay"
 categories: [python, celery]
 ---
