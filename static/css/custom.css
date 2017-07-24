@@ -42,3 +42,7 @@ span.time, span.categories {
   border: none;
   color: #3498db;
 }
+
+.text-default {
+  color: #ffffff;
+}

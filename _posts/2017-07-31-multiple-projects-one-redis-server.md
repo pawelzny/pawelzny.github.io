@@ -1,20 +1,20 @@
 ---
 layout: post
 title: "Multiple Celery projects with one Redis server"
-date: 2017-07-11 00:00:00 +0200
+date: 2017-07-31 00:00:00 +0200
 categories: [python, celery, redis]
 ---
 
 This is second article from series about Celery 4. If you miss first article,
 you can find it here: <br>
-[First steps with celery 4 and django]({% post_url 2017-07-04-first-steps-with-celery-4-and-django %})
+[First steps with celery 4 and django]({% post_url 2017-07-24-first-steps-with-celery-4-and-django %})
 
 Environment:
 
 ```
 Ubuntu 16.04
 Python 3.5+
-Celery 4.0.2
+Celery 4.1.0
 Redis 3.2
 ```
 

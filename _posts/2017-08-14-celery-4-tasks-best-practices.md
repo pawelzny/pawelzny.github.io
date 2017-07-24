@@ -1,13 +1,17 @@
 ---
 layout: post
-title: "Celery tasks - best practices"
-date: 2017-07-25 00:00:00 +0200
+title: "Celery 4 tasks - best practices"
+date: 2017-08-14 00:00:00 +0200
 categories: [python, celery]
 ---
 
 This is third article from series. Check out previous two about
-[first steps with celery 4 and Django]({% post_url 2017-07-04-first-steps-with-celery-4-and-django %}) 
-and [must have Celery 4 configuration]({% post_url 2017-07-18-must-have-celery-4-configuration %}).
+[first steps with celery 4 and Django]({% post_url 2017-07-24-first-steps-with-celery-4-and-django %}) 
+and [must have Celery 4 configuration]({% post_url 2017-08-07-must-have-celery-4-configuration %}).
+
+<div class="alert alert-info">
+    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.1.0
+</div>
 
 ## Set name for every task
 
@@ -62,7 +66,7 @@ celery -A proj worker -l info -Q default,low_priority,high_priority
 ```
 
 <div class="alert alert-warning" role="alert">
-    <i class="fa fa-exclamation-triangle"></i> WARNING! <br>
+    <i class="fa fa-exclamation-triangle"></i> <strong>WARNING!</strong> <br>
     Celery 4 has nasty, very hard to find bug in worker.
     <p>
         It works only with 4 defined queues after <code class="highlighter-rouge">-Q</code> 
@@ -114,14 +118,17 @@ def fetch_data():
 ```
 
 <div class="alert alert-warning">
-    <i class="fa fa-exclamation-triangle"></i> WARNING!
-    max_retries works only with auto_retry and self.retry()
+    <i class="fa fa-exclamation-triangle"></i> <strong>WARNING!</strong><br>
+    <code class="highlighter-rouge">max_retries</code> 
+    works only with <code class="highlighter-rouge">auto_retry</code> 
+    and <code class="highlighter-rouge">self.retry</code>
 </div>
 
 ## Divide an iterable of work into pieces 
 
 If you have hundreds of thousands objects it is better idea to process them in chunks.
-For example 100 000 elements can be split for 1000 elements per job which gives 100 jobs in queue.
+For example `100 000` elements can be split for `1000` elements per job which 
+gives `100` jobs in queue.
 
 ```python
 @celery_app.task(name='proj.package.tasks.process_data')

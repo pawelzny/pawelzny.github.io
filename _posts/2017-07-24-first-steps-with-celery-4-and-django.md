@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "First steps with Celery 4 and Django"
-date: 2017-07-04 00:00:00 +0200
+date: 2017-07-24 00:00:00 +0200
 categories: [python, celery, django]
 ---
 
@@ -16,15 +16,9 @@ Followed by [Wikipedia](https://en.wikipedia.org/wiki/Celery_(software)):
 > on distributed message passing. While it supports scheduling, its focus is on 
 > operations in real time.
 
-Environment:
-
-```
-Ubuntu 16.04
-Python 3.5+
-Django 1.10+
-Celery 4.0.2
-Redis 3.2
-```
+<div class="alert alert-info">
+    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.1.0
+</div>
 
 Celery 4 gives you ability to place all configuration in `settings.py` with your Django
 settings, but from my experience .. you don't want to do that. It is much cleaner to
@@ -98,5 +92,5 @@ where `celery.py` exists.
 celery -A proj worker -l info
 ```
 
-Look at next article [Must have Celery 4 configuration]({% post_url 2017-07-18-must-have-celery-4-configuration %})
+Look at next article [Must have Celery 4 configuration]({% post_url 2017-08-07-must-have-celery-4-configuration %})
 . I write few more options you have to look in.

@@ -1,5 +1,5 @@
 ---
 layout: post
-title: "Call Celery 4 tasks with delay"
+title: "Time zones and delayed Celery 4 tasks"
 categories: [python, celery]
 ---

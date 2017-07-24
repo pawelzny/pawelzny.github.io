@@ -1,22 +1,17 @@
 ---
 layout: post
 title: "Must have Celery 4 configuration"
-date: 2017-07-18 00:00:00 +0200
+date: 2017-08-07 00:00:00 +0200
 categories: [python, celery]
 ---
 
 Last time we talk about basic configuration of Celery in Django project.
 If you missed that, please see this article before further reading
-[First steps with celery 4 and Django]({% post_url 2017-07-04-first-steps-with-celery-4-and-django %})
+[First steps with celery 4 and Django]({% post_url 2017-07-24-first-steps-with-celery-4-and-django %})
 
-All examples in this article are tested with environment:
-
-```
-Ubuntu 16.04
-Python 3.5+
-Celery 4.0.2
-Redis 3.2
-```
+<div class="alert alert-info">
+    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.1.0
+</div>
 
 I will extend configuration from first article with more options, but this is not full list.
 I will focus only on must have options. In most cases default values are best for project, 
