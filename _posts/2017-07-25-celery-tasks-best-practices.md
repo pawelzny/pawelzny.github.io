@@ -9,26 +9,25 @@ This is third article from series. Check out previous two about
 [first steps with celery 4 and Django]({% post_url 2017-07-04-first-steps-with-celery-4-and-django %}) 
 and [must have Celery 4 configuration]({% post_url 2017-07-18-must-have-celery-4-configuration %}).
 
-My environment:
+## Set name for every task
 
+Celery creates tasks names based on how module is imported. It is somehow dangerous.
+Set explicitly name for every task. Prefer using proj.package.module.function_name convention
+to avoid collisions with 3rd party packages.
+
+```python
+@app.task(name='proj.package.tasks.add')
+def add(a, b):
+    return a + b
 ```
-Ubuntu 16.04
-Python 3.5+
-Celery 4.0.2
-Redis 3.2
-```
+
+## Prefer apply_async over delay
+
 
 Celery gives us two methods `delay()` and `apply_async()` to call tasks. Delay is preconfigured
 with default configurations, and only requires arguments which will be passed to task.
 
 ```python
-from proj import celery_app
-
-@celery_app.task
-def add(a, b):
-    return a + b
-
-
 add.delay(10, 5)
 add.delay(a=10, b=5)
 ``` 
@@ -36,14 +35,12 @@ add.delay(a=10, b=5)
 That is it. Delay function processing with given arguments. It works well and in many cases
 it is all we need, but it is not future proof.
 
-## Prefer apply_async over delay
-
 Apply_async is more complex, but also more powerful then preconfigured delay.
 It is always better to use apply_async with few arguments then default behavior.
 
 ```python
-add.apply_async(queue='low_priority', priority=0, retries=0, args=(10, 5))
-add.apply_async(queue='high_priority', priority=9, retries=2, kwargs={'a': 10, 'b': 5})
+add.apply_async(queue='low_priority', args=(10, 5))
+add.apply_async(queue='high_priority', kwargs={'a': 10, 'b': 5})
 ```
 
 ## Always define queue
@@ -88,16 +85,84 @@ This way you can control tasks consumption speed.
 Keep concurrency number close to CPU cores amount. If server has 4 core CPU, then max concurrency
 should be 4. Of course bigger numbers will work but with less efficiency.
 
-## Set retries argument
-
-Every time tasks raise exception, Celery will try again and again and again. Without 
-hard limit Celery never stop. With many broken tasks Redis or RabbitMQ will be flooded 
-with tasks that have zero chance to end with success.
-
-And by default Celery will repeat tasks indefinitely.
-
 ## Priority within single queue
 
 Tasks split in many queues it's always better then putting everything in single queue.
 But, sometimes even in single queue tasks may have different priority.
 To avoid FIFO, it is better to define priority with integer range from 0 to 9.
+
+```python
+add.apply_async(queue='high_priority', priority=0, kwargs={'a': 10, 'b': 5})
+add.apply_async(queue='high_priority', priority=5, kwargs={'a': 10, 'b': 5})
+add.apply_async(queue='high_priority', priority=9, kwargs={'a': 10, 'b': 5})
+```
+
+## Use auto_retry always with max_retries
+
+Auto retry gives ability to retry task with the same input and task id when specific exception
+occurs. Let's say task calls external API and expect occasional HTTP Exception.
+
+Auto retry takes list of expected exceptions and retry task when one of these occurs.
+In that case always set max_retries boundary. Never let tasks repeat infinitely.
+
+```python
+from httplib import HTTPException
+
+@app.task(name='proj.package.tasks.fetch_data', auto_retry=[HTTPException], max_retries=3)
+def fetch_data():
+    return call_api()
+```
+
+<div class="alert alert-warning">
+    <i class="fa fa-exclamation-triangle"></i> WARNING!
+    max_retries works only with auto_retry and self.retry()
+</div>
+
+## Divide an iterable of work into pieces 
+
+If you have hundreds of thousands objects it is better idea to process them in chunks.
+For example 100 000 elements can be split for 1000 elements per job which gives 100 jobs in queue.
+
+```python
+@celery_app.task(name='proj.package.tasks.process_data')
+def process_data(elements):
+    return process_elements(elements)
+
+process_data.chunks(elements, 100).apply_async(queue='low_priority')
+```
+
+But chunks are sequential. This mean worker will consume one by another.
+We can convert chunks to group which is consumed in parallel.
+
+```python
+process_data.chunks(elements, 100).group().apply_async(queue='low_priority')
+```
+
+## Link tasks that depend on each other
+
+Using examples from this article. Data have to be processed after fetching.
+Instead of using countdown and have hope that fetching will end before processing starts,
+chain tasks and run in sequence.
+
+```python
+fetch_data.apply_async(queue='low_priority', link=process_data.s(queue='low_priority'))
+```
+
+## Avoid launching synchronous subtasks
+
+Never do that:
+
+```python
+data = fetch_data.delay().get()
+processed_data = process_data.delay(data).get()
+```
+
+Do this instead:
+
+```python
+from celery import chain
+
+processed_data = chain(fetch_data.s(), process_data.s()).apply_async(queue='low_priority').get()
+```
+
+<p class="lead">What are your best practices? Leave down in comments.</p>

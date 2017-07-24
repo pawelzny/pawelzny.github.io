@@ -1,5 +1,5 @@
 body {
-    font-family: "Roboto", Arial, sans-serif !important;
+  font-family: "Roboto", Arial, sans-serif !important;
 }
 
 a.project-detail:hover h3 {
@@ -31,4 +31,14 @@ span.time, span.categories {
 
 .content {
   padding-top: 10px;
+}
+
+.paragraph-link {
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.paragraph-link:hover {
+  border: none;
+  color: #3498db;
 }
