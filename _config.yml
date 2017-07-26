@@ -1,14 +1,58 @@
-# General Jekyll Config
-url: https://pawelzny.com
-lsi: false
-exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
-collections:
-  npm:
-    output: true
-  packagist:
-    output: true
-gems:
-  - jekyll-sitemap
+title: Everyday with python and chatbots!
+description: Python, deep-learning and chatbots
+author: Pawel Zadrozny <small>@pawelzny</small>
+github: https://github.com/pawelzny
+about: I am tech lead developer, focused on deep learning with Tensorflow, Python and Django.
+disqus_shortname: pawelzny
+google_analytics: UA-55876783-5
+avatar_url: /static/img/avatar.jpg
+
+timezone: "Europe/Warsaw"
+
+enableTags: true
+tagarray: []
+
+#collections:
+#  project:
+#    output: true
+#    permalink: /project/:path/
+
+social:
+#    - icon: fa-facebook
+#      link: "#"
+    - icon: fa-twitter
+      link: "https://twitter.com/pawelzny"
+    - icon: fa-linkedin
+      link: "https://www.linkedin.com/in/pawelzadrozny"
+    - icon: fa-stack-exchange
+      link: "https://stackexchange.com/users/7527767/pawel"
+    - icon: fa-github
+      link: "https://github.com/pawelzny"
+
+share:
+  twitter_username: pawelzny
+  fb_appid:
+
+urls:
+    - text: About Me
+      url: /about/
+#    - text: My Projects
+#      url: /projects/
+    - text: XML Feed
+      url: /feed.xml
+
+url: "https://pawelzny.com"
+baseurl: ""
+paginate: 30
+per_page: 30
+paginate_path: "/page/:num/"
+permalink: pretty
 markdown: kramdown
-permalink: /:categories/:year/:month/:day/:title
-post_dirs: false
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
