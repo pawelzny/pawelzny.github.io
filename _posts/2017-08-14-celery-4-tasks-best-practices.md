@@ -10,12 +10,12 @@ This is third article from series. Check out previous two about
 and [must have Celery 4 configuration]({% post_url 2017-08-07-must-have-celery-4-configuration %}).
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.1.0
+    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
 </div>
 
 ## Set name for every task
 
-Celery creates tasks names based on how module is imported. It is somehow dangerous.
+Celery creates task names based on how module is imported. It is a little dangerous.
 Set explicitly name for every task. Prefer using proj.package.module.function_name convention
 to avoid collisions with 3rd party packages.
 
@@ -26,7 +26,6 @@ def add(a, b):
 ```
 
 ## Prefer apply_async over delay
-
 
 Celery gives us two methods `delay()` and `apply_async()` to call tasks. Delay is preconfigured
 with default configurations, and only requires arguments which will be passed to task.
@@ -40,7 +39,7 @@ That is it. Delay function processing with given arguments. It works well and in
 it is all we need, but it is not future proof.
 
 Apply_async is more complex, but also more powerful then preconfigured delay.
-It is always better to use apply_async with few arguments then default behavior.
+It is always better to use apply_async with specificly set options.
 
 ```python
 add.apply_async(queue='low_priority', args=(10, 5))
@@ -49,7 +48,7 @@ add.apply_async(queue='high_priority', kwargs={'a': 10, 'b': 5})
 
 ## Always define queue
 
-Always define queue to easy priorities task jobs. You may want to have at least 3 queues,
+Always define queue to easy priorities jobs. You may want to have at least 3 queues,
 one for high priority tasks, second for low priority tasks, and default one for normal priority.
 
 In my last post about configuration I set `app.conf.task_create_missing_queues = True`. 
@@ -59,7 +58,7 @@ and Celery will handle it for me.
 One change is required to work with different queues. Worker has to know about them, otherwise
 worker will listen only for default queue.
 
-Run worker with this command
+Run worker with command:
 
 ```shell
 celery -A proj worker -l info -Q default,low_priority,high_priority
@@ -71,7 +70,7 @@ celery -A proj worker -l info -Q default,low_priority,high_priority
     <p>
         It works only with 4 defined queues after <code class="highlighter-rouge">-Q</code> 
         parameter. If you need more queues,
-        just spin off more workers.
+        just start more workers.
     </p>
 </div>
 
@@ -82,6 +81,14 @@ Where is profit in this approach? Obviously in concurrency.
 celery -A proj worker -l info -Q default -c 2
 celery -A proj worker -l info -Q low_priority -c 1
 celery -A proj worker -l info -Q high_priority -c 4
+```
+
+And with auto scaling workers
+
+```shell
+celery -A proj worker -l info -Q default --autoscale 4,2
+celery -A proj worker -l info -Q low_priority --autoscale 2,1
+celery -A proj worker -l info -Q high_priority --autoscale 8,4
 ```
 
 This way you can control tasks consumption speed. 
@@ -135,14 +142,14 @@ gives `100` jobs in queue.
 def process_data(elements):
     return process_elements(elements)
 
-process_data.chunks(elements, 100).apply_async(queue='low_priority')
+process_data.chunks(iter(elements), 100).apply_async(queue='low_priority')
 ```
 
 But chunks are sequential. This mean worker will consume one by another.
 We can convert chunks to group which is consumed in parallel.
 
 ```python
-process_data.chunks(elements, 100).group().apply_async(queue='low_priority')
+process_data.chunks(iter(elements), 100).group().apply_async(queue='low_priority')
 ```
 
 ## Link tasks that depend on each other

@@ -5,7 +5,7 @@ date: 2017-07-24 00:00:00 +0200
 categories: [python, celery, django]
 ---
 
-This is first art from series about Celery 4 usage, configurations and quirks.
+This is first art from series about Celery 4 configurations and quirks.
 I will show you how to properly use Celery with Django projects.
 
 At that moment I assume, that you know at least python basics.
@@ -17,10 +17,10 @@ Followed by [Wikipedia](https://en.wikipedia.org/wiki/Celery_(software)):
 > operations in real time.
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.1.0
+    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
 </div>
 
-Celery 4 gives you ability to place all configuration in `settings.py` with your Django
+Celery 4 gives you ability to place all configuration in `settings.py` with rest Django
 settings, but from my experience .. you don't want to do that. It is much cleaner to
 keep Celery settings in separate module.
 
@@ -91,6 +91,3 @@ where `celery.py` exists.
 ```shell
 celery -A proj worker -l info
 ```
-
-Look at next article [Must have Celery 4 configuration]({% post_url 2017-08-07-must-have-celery-4-configuration %})
-. I write few more options you have to look in.

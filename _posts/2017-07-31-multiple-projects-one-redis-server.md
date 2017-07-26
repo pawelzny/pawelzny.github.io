@@ -12,9 +12,9 @@ you can find it here: <br>
 Environment:
 
 ```
-Ubuntu 16.04
-Python 3.5+
-Celery 4.1.0
+Ubuntu 17.04
+Python 3.5
+Celery 4.0.2
 Redis 3.2
 ```
 
@@ -51,4 +51,4 @@ For more databases edit `redis.conf` file
 sudo vim /etc/redis/redis.conf
 ```
 
-On line `178` change databases amount to required value.
+In line `178`, change max database index.

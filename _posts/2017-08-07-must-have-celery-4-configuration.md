@@ -10,7 +10,7 @@ If you missed that, please see this article before further reading
 [First steps with celery 4 and Django]({% post_url 2017-07-24-first-steps-with-celery-4-and-django %})
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.1.0
+    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
 </div>
 
 I will extend configuration from first article with more options, but this is not full list.
@@ -28,11 +28,10 @@ app.autodiscover_tasks()
 ```
 
 I prefer Redis server over RabbitMQ. It is not the best nor the worst choice. It's just a choice.
-If you prefer RabbitMQ, then use it instead. Configuration in this article will work for both.
+If you prefer RabbitMQ use it instead. Configuration in this article will work for both.
 
-In versions below 4.0.0 Celery use Pickle to serialize arguments passed to tasks.
-Celery < 4 allow to use other serializers, but Pickle was used by default and many of us.
-Upgrade to Celery 4 is painful because default serializer was changed to JSON.
+In Celery 3 use Pickle to serialize arguments passed to tasks,
+but Celery 4 use JSON serializer by default.
 
 Future versions may change serializer once again. To avoid painful upgrade set serializer
 explicitly in configurations.
@@ -63,7 +62,7 @@ works best.
 app.conf.worker_prefetch_multiplier = 1
 ```
 
-Put it all together. Whole must have configurations is just few lines. Most of time
+Put it all together. Whole "must have" configuration is just few lines. Most of time
 default values are best for project. Let Celery do it's job for you.
 
 ```python
