@@ -2,7 +2,7 @@
 layout: post
 title: "Multiple Celery projects with one Redis server"
 date: 2017-07-31 00:00:00 +0200
-categories: [python, celery, redis]
+categories: [python, celery]
 ---
 
 This is second article from series about Celery 4. If you miss first article,
@@ -34,7 +34,7 @@ app.autodiscover_tasks()
 And something strange happens. Workers starts to steal tasks from each others. There is definitely
 configuration issue. All apps uses the same database and that is the case.
 
-To avoid such behavior you can mess with queues and routing keys which may be painful 
+To avoid such behavior you can mess with queues and routing keys which may be painful
 and not effective. Or use separate database.
 
 Redis-server uses database with index 0 by default. But you can change it by adding different
