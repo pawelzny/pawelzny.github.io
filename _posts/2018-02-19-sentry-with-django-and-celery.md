@@ -13,14 +13,14 @@ Read more on [https://sentry.io/welcome/](https://sentry.io/welcome/)
 
 Sentry comes with ready to use SDK package compatible with Python 2.7 and 3.x.
 
-```shell
-pip install raven; pip freeze | grep raven >> requirements.txt
+```console
+(venv)$ pip install raven; pip freeze | grep raven >> requirements.txt
 ```
 
 or
 
-```shell
-pipenv install raven
+```console
+$ pipenv install raven
 ```
 
 ## Sentry minimal config for Django
@@ -57,4 +57,3 @@ register_logger_signal(client)
 register_signal(client)
 register_signal(client, ignore_expected=True)
 ```
-

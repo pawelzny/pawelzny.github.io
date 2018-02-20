@@ -6,7 +6,7 @@ categories: [python, celery]
 ---
 
 This is third article from series. Check out previous two about
-[first steps with celery 4 and Django]({% post_url 2017-07-24-first-steps-with-celery-4-and-django %}) 
+[first steps with celery 4 and Django]({% post_url 2017-07-24-first-steps-with-celery-4-and-django %})
 and [must have Celery 4 configuration]({% post_url 2017-08-07-must-have-celery-4-configuration %}).
 
 <div class="alert alert-info">
@@ -33,7 +33,7 @@ with default configurations, and only requires arguments which will be passed to
 ```python
 add.delay(10, 5)
 add.delay(a=10, b=5)
-``` 
+```
 
 That is it. Delay function processing with given arguments. It works well and in many cases
 it is all we need, but it is not future proof.
@@ -51,8 +51,8 @@ add.apply_async(queue='high_priority', kwargs={'a': 10, 'b': 5})
 Always define queue to easy priorities jobs. You may want to have at least 3 queues,
 one for high priority tasks, second for low priority tasks, and default one for normal priority.
 
-In my last post about configuration I set `app.conf.task_create_missing_queues = True`. 
-This way I delegate queues creation to Celery. I can use apply_async with any queue I want, 
+In my last post about configuration I set `app.conf.task_create_missing_queues = True`.
+This way I delegate queues creation to Celery. I can use apply_async with any queue I want,
 and Celery will handle it for me.
 
 One change is required to work with different queues. Worker has to know about them, otherwise
@@ -60,38 +60,38 @@ worker will listen only for default queue.
 
 Run worker with command:
 
-```shell
-celery -A proj worker -l info -Q default,low_priority,high_priority
+```console
+(venv)$ celery -A proj worker -l info -Q default,low_priority,high_priority
 ```
 
 <div class="alert alert-warning" role="alert">
     <i class="fa fa-exclamation-triangle"></i> <strong>WARNING!</strong> <br>
     Celery 4 has nasty, very hard to find bug in worker.
     <p>
-        It works only with 4 defined queues after <code class="highlighter-rouge">-Q</code> 
+        It works only with 4 defined queues after <code class="highlighter-rouge">-Q</code>
         parameter. If you need more queues,
         just start more workers.
     </p>
 </div>
 
-Where is profit in this approach? Obviously in concurrency. 
+Where is profit in this approach? Obviously in concurrency.
 `-c` parameter defines how many concurrent threads worker create.
 
-```shell
-celery -A proj worker -l info -Q default -c 2
-celery -A proj worker -l info -Q low_priority -c 1
-celery -A proj worker -l info -Q high_priority -c 4
+```console
+(venv)$ celery -A proj worker -l info -Q default -c 2
+(venv)$ celery -A proj worker -l info -Q low_priority -c 1
+(venv)$ celery -A proj worker -l info -Q high_priority -c 4
 ```
 
 And with auto scaling workers
 
-```shell
-celery -A proj worker -l info -Q default --autoscale 4,2
-celery -A proj worker -l info -Q low_priority --autoscale 2,1
-celery -A proj worker -l info -Q high_priority --autoscale 8,4
+```console
+(venv)$ celery -A proj worker -l info -Q default --autoscale 4,2
+(venv)$ celery -A proj worker -l info -Q low_priority --autoscale 2,1
+(venv)$ celery -A proj worker -l info -Q high_priority --autoscale 8,4
 ```
 
-This way you can control tasks consumption speed. 
+This way you can control tasks consumption speed.
 
 Keep concurrency number close to CPU cores amount. If server has 4 core CPU, then max concurrency
 should be 4. Of course bigger numbers will work but with less efficiency.
@@ -126,15 +126,15 @@ def fetch_data():
 
 <div class="alert alert-warning">
     <i class="fa fa-exclamation-triangle"></i> <strong>WARNING!</strong><br>
-    <code class="highlighter-rouge">max_retries</code> 
-    works only with <code class="highlighter-rouge">auto_retry</code> 
+    <code class="highlighter-rouge">max_retries</code>
+    works only with <code class="highlighter-rouge">auto_retry</code>
     and <code class="highlighter-rouge">self.retry</code>
 </div>
 
-## Divide an iterable of work into pieces 
+## Divide an iterable of work into pieces
 
 If you have hundreds of thousands objects it is better idea to process them in chunks.
-For example `100 000` elements can be split for `1000` elements per job which 
+For example `100 000` elements can be split for `1000` elements per job which
 gives `100` jobs in queue.
 
 ```python

@@ -26,7 +26,7 @@ And add your key to user authorized_keys `~/.ssh/authorized_keys` on VPS.
 
 At this point, make sure your domain is pointing to server IP.
 
-```text
+```console
 $ sudo vim /etc/apache2/sites-available/tunnel.conf
 ```
 
@@ -34,10 +34,10 @@ Copy and paste configuration and change `tunnel.domain.com` for your preference.
 I choose to redirect on port 24001 because in general it is unused.
 Read about well known port numbers [https://www.webopedia.com/quick_ref/portnumbers.asp](https://www.webopedia.com/quick_ref/portnumbers.asp)
 
-```text
+```apache
 <VirtualHost *:80>
   ServerName tunnel.domain.com
-  
+
   ProxyPass "/" "http://localhost:24001/"
   ProxyPassReverse "/" "http://localhost:24001/"
   ProxyPreserveHost On
@@ -50,7 +50,8 @@ Read about well known port numbers [https://www.webopedia.com/quick_ref/portnumb
 
 Enable site
 
-```text
+```console
+$ sudo a2enmod proxy rewrite
 $ sudo a2ensite tunnel
 $ sudo service apache2 reload
 ```
@@ -63,9 +64,8 @@ If you don't have SSL cert read how to get [Free SSL certificates]({% post_url 2
 
 Connect over SSH, listen on remote port 24001 and redirect to local port 8000.
 
-```text
+```console
 $ ssh -R 24001:localhost:8000 user@tunnel.domain.com -N
 ```
 
-Run app on port **8000**.
-
+Run local app on port **8000**.

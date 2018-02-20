@@ -47,8 +47,8 @@ redis = 'redis://localhost:6379/1'
 Out of the box Redis allow to use database with indexes from 0 to 16.
 For more databases edit `redis.conf` file
 
-```shell
-sudo vim /etc/redis/redis.conf
+```console
+$ sudo vim /etc/redis/redis.conf
 ```
 
-In line `178`, change max database index.
+In line `~178`, change max database index.

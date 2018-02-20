@@ -8,7 +8,7 @@ categories: [nodejs, javascript]
 Creating function which accepts another function as last parameter is not challenging,
 but boring and tiring. It can be changed.
 
-### Standard callback implementation
+## Standard callback implementation
 Designing custom function which accepts callback, you need to take care of few things:
 
 * Declare last argument as callback function
@@ -18,36 +18,40 @@ Designing custom function which accepts callback, you need to take care of few t
 
 In result you will get something like that:
 
+### Create myFunc which accept callback
+
 ```javascript
-// Create myFunc which accept callback
 function myFunc (param1, param2, callback) {
-    let error = null;
-    
-    /* some logic */
-    
-    // check if callback is callable
-    if (typeof callback === 'function') {
-        // make environment safe against bugs
-        try {
-            // if your logic returns error pass the error
-            if (error) {
-                callback(error);
-            } else {
-                // else pass other arguments
-                callback(null, param1, param2);
-            }
-        } catch (err) { /* pass, callback bugs */ }
-    }
-    
-    /* rest of your logic */
+  let error = null;
+
+  /* some logic */
+
+  // check if callback is callable
+  if (typeof callback === 'function') {
+    // make environment safe against bugs
+    try {
+      // if your logic returns error pass the error
+      if (error) {
+        callback(error);
+      } else {
+        // else pass other arguments
+        callback(null, param1, param2);
+      }
+    } catch (err) { /* pass, callback bugs */ }
+  }
+  /* rest of your logic */
 }
-// invoke myFunc with callback
+```
+
+### Invoke myFunc with callback
+
+```javascript
 myFunc('test', true, function(err, is_test, flag) {
-    if (err) {
-        /* error logic */
-    } else {
-        /* other logic */
-    }
+  if (err) {
+    /* error logic */
+  } else {
+    /* other logic */
+  }
 });
 ```
 
@@ -57,44 +61,44 @@ understand, writing it again and again is not necessary.
 
 If you can avoid repeating your code you should do it.
 
-### Simply as last-callback
+## Simply as last-callback
 There is a package in NPM called [last-callback]({{site.url}}/npm/last-callback) ,
 which removes need of writing whole callback boilerplate. All you need to do is pass all arguments
 to lastCallback() function to get extracted last callable argument.
 
-#### Example for NodeJS:
+### Example for NodeJS:
 ```javascript
 const lastCallback = require("last-callback");
 
 function myFunc (param1, param2) {
-    let error = null;
-    
-    // extract last arguments and make it callable
-    // you do not need to declare callback as last argument
-    // this way you have truly optional callback
-    let callback = lastCallback(...arguments);
-    
-    /* some logic */
-    
-    // you do not need to check if callback is typeof function
-    // even if last arguments is not a function
-    // lastCallback always returns callable
-    // which may do nothing if optional callback has not been passed
-    // as last argument.
-    // No more type checking
-    try {
-        if (error) {
-            callback(error);
-        } else {
-            callback(null, param1, param2);
-        }
-    } catch (err) { /* pass, callback bugs */ }
-   
-    /* rest of your logic */
+  let error = null;
+
+  // extract last arguments and make it callable
+  // you do not need to declare callback as last argument
+  // this way you have truly optional callback
+  let callback = lastCallback(...arguments);
+
+  /* some logic */
+
+  // you do not need to check if callback is typeof function
+  // even if last arguments is not a function
+  // lastCallback always returns callable
+  // which may do nothing if optional callback has not been passed
+  // as last argument.
+  // No more type checking
+  try {
+    if (error) {
+      callback(error);
+    } else {
+      callback(null, param1, param2);
+    }
+  } catch (err) { /* pass, callback bugs */ }
+
+  /* rest of your logic */
 }
 ```
 
-#### Example for browser:
+### Example for browser:
 Download last-callback [for browsers](https://github.com/pawelzny/last-callback/tree/master/browser)
 and add to your project as before your code.
 Last-callback is dependency free and do not interfere with any libraries like jQuery, Angular, React and other.
@@ -103,35 +107,35 @@ Last-callback is dependency free and do not interfere with any libraries like jQ
 <script src="last-callback.v1.0.3.min.js"></script>
 <script>
 function myFunc (param1, param2) {
-    var error = null;
-    
-    // ES5 Style:
-    var callback = lastCallback.apply(null, arguments);
-    // ES6 Style:
-    // let callback = lastCallback(...arguments);
-    
-    /* some logic */
-    
-    try {
-        if (error) {
-            callback(error);
-        } else {
-            callback(null, param1, param2);
-        }
-    } catch (err) { /* pass, callback bugs */ }
-   
-    /* rest of your logic */
+  var error = null;
+
+  // ES5 Style:
+  var callback = lastCallback.apply(null, arguments);
+  // ES6 Style:
+  // let callback = lastCallback(...arguments);
+
+  /* some logic */
+
+  try {
+    if (error) {
+      callback(error);
+    } else {
+      callback(null, param1, param2);
+    }
+  } catch (err) { /* pass, callback bugs */ }
+
+  /* rest of your logic */
 }
 </script>
 ```
 
-#### Pros:
+### Pros:
 
 * Do not need to declare last argument as callback
 * Callback function is automaticaly extracted from arguments list
 * Do not need to check if callback is typeof function
 * If last argument is not a function, last-callback returns void function
 
-#### Cons:
+### Cons:
 
 * One more dependency in your project

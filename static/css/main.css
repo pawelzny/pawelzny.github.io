@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif !important;
   background: url("/static/img/subtle_dots.png");
   line-height: 1.5em;
   font-weight: 300;
@@ -193,4 +193,49 @@ div.col-sm-3 img.profile-avatar {
   div.col-sm-3 {
     margin-top: 30px;
   }
+}
+
+a.project-detail:hover h3 {
+  color: #7b7590;
+}
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #3498db;
+}
+
+a:hover {
+  color: #7b7590;
+  border-bottom: 1px solid #7b7590;
+}
+
+div.col-sm-3 {
+  font-size: 14px;
+}
+
+ul.sidebar-nav {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+span.time, span.categories {
+  font-size: 12px;
+}
+
+.content {
+  padding-top: 10px;
+}
+
+.paragraph-link {
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.paragraph-link:hover {
+  border: none;
+  color: #3498db;
+}
+
+.text-default {
+  color: #ffffff;
 }

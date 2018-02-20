@@ -5,8 +5,7 @@ date: 2018-02-19 14:30:00 +0200
 categories: [python, celery]
 ---
 
-Opóźnianie wykonania zadań nie jest czymś oczywistym w Celery.
-Jak zwykle, trzeba uważać na kilka drobnych szczegółów.
+Delaying tasks is not obvious and as always when Celery comes in we must take care about few things.
 
 <div class="alert alert-info">
     <i class="fa fa-info-circle"></i> <strong>INFO</strong><br>
@@ -66,4 +65,3 @@ app.conf.broker_transport_options = {"visibility_timeout": max_timeout_in_second
 
 Without `visibility_timeout`, tasks with very long timeout may be dropped or will be executed multiple times.
 Once or twice for every active worker.
-

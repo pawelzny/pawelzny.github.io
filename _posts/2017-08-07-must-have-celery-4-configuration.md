@@ -14,7 +14,7 @@ If you missed that, please see this article before further reading
 </div>
 
 I will extend configuration from first article with more options, but this is not full list.
-I will focus only on must have options. In most cases default values are best for project, 
+I will focus only on must have options. In most cases default values are best for project,
 but as it grows and uses more and more features it requires additional configuration.
 
 Let's start with configuration from first article.
@@ -82,6 +82,6 @@ app.conf.worker_prefetch_multiplier = 1
 
 Run worker
 
-```shell
-celery -A proj worker -l info
+```console
+(venv)$ celery -A proj worker -l info
 ```

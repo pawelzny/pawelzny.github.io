@@ -14,13 +14,13 @@ Official documentation recommend to use Certbot client which is shell tool.
 
 On Debian and Ubuntu:
 
-```shell
+```console
 $ sudo apt install certbot
 ```
 
 Alternatively:
 
-```shell
+```console
 $ wget https://dl.eff.org/certbot-auto
 $ sudo chmod a+x ./certbot-auto
 $ ./certbot-auto --help
@@ -36,14 +36,22 @@ However when I ran Certbot with default arguments I had trouble with permissions
 
 My solution:
 
-```shell
-$ sudo certbot --authenticator standalone --installer apache -d app1.domain.com,app2.domain.com --pre-hook "apachectl stop" --post-hook "apachectl start"
+```console
+$ sudo certbot --authenticator standalone \
+               --installer apache \
+               -d app1.domain.com,app2.domain.com \
+               --pre-hook "apachectl stop" \
+               --post-hook "apachectl start"
 ```
 
 Alternatively
 
-```shell
-$ sudo ./path/to/certbot-auto --authenticator standalone --installer apache -d app1.domain.com,app2.domain.com --pre-hook "apachectl stop" --post-hook "apachectl start"
+```console
+$ sudo ./path/to/certbot-auto --authenticator standalone \
+                              --installer apache \
+                              -d app1.domain.com,app2.domain.com \
+                              --pre-hook "apachectl stop" \
+                              --post-hook "apachectl start"
 ```
 
 * `--authenticator standalone` Use local authentication
@@ -53,25 +61,24 @@ $ sudo ./path/to/certbot-auto --authenticator standalone --installer apache -d a
 
 Cert renewal is a lot easier, because all domains are already configured.
 
-```shell
+```console
 $ sudo certbot renew
 ```
 
 or
 
-```shell
+```console
 $ sudo ./path/to/certbot-auto renew
 ```
 
 Certs expires within 3 months. Create cron job for automatic renew.
 
-```shell
+```console
 $ sudo crontab -e
 ```
 
 Add new job which will run at noon and midnight every day:
 
-```text
+```
 0 0,12 * * * certbot renew
 ```
-

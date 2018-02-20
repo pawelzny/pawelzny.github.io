@@ -19,8 +19,8 @@ NodeJS >= 6.2.0
 
 With NPM:
 
-```shell
-npm install -S dotenv-loader
+```console
+$ npm install -S dotenv-loader
 ```
 
 ### Load environments
@@ -33,7 +33,7 @@ npm install -S dotenv-loader
 
 *.env file Example:*
 
-```text
+```
 THROW_ERROS=false
 PAGE_ELEMENTS=100
 WELCOME_MSG=Hi there!
@@ -46,11 +46,11 @@ On the begining of your main script require dotenv-loader and call `.load()` met
 
 ```javascript
 const
-    optionalSettings = {
-        file: "./other/path/to/.env", // default: .env
-        encoding: "unicode" // default: utf8
-    },
-    env = require('dotenv-loader');
+  optionalSettings = {
+    file: "./other/path/to/.env", // default: .env
+    encoding: "unicode" // default: utf8
+  },
+  env = require('dotenv-loader');
 
 env.load(optionalSettings).on('error', (err) => console.log(err));
 // Your environment variables are now available globally.
@@ -78,8 +78,8 @@ Optional callback function takes three parameters:
 
 ```javascript
 const
-    env = require('dotenv-loader'),
-    myVariable = env.get('WELCOME_MSG', 'Or default value');
+  env = require('dotenv-loader'),
+  myVariable = env.get('WELCOME_MSG', 'Or default value');
 
 console.log(myVariable); // Hi there!
 ```
@@ -98,16 +98,15 @@ All your variable keys will be normalized to uppercase, but when you use env.get
 You can pass callback function as last parameter. It will be called asynchronously, and still return a value.
 
 ```javascript
-let
-    val = env.get('NOT_EXIST', 'default val', (val, key, defaults) => {
-        console.log(val); // null
-        console.log(key); // NOT_EXIST
-        console.log(defaults); // default val
+let val = env.get('NOT_EXIST', 'default val', (val, key, defaults) => {
+  console.log(val); // null
+  console.log(key); // NOT_EXIST
+  console.log(defaults); // default val
 
-        if (val === null) {
-            throw Error('Env variable does not exist');
-        }
-    }); // throws [Error: Env variable does not exist']
+  if (val === null) {
+    throw Error('Env variable does not exist');
+  }
+}); // throws [Error: Env variable does not exist']
 ```
 
 ### Full Example
@@ -119,11 +118,10 @@ env.load().on('error', (err) => throw Error(err));
 // Rest of your code
 
 let nodeEnv = env.get('NODE_ENV', (val) => {
-    console.log('Current environment is: %s', val)
+  console.log('Current environment is: %s', val)
 });
 
 if (nodeEnv === 'development') {
-    console.log('I am in development mode');
+  console.log('I am in development mode');
 }
-
 ```
