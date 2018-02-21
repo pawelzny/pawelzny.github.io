@@ -3,6 +3,7 @@ layout: post
 title: "First steps with Celery 4 and Django"
 date: 2017-07-24 00:00:00 +0200
 categories: [python, celery, django]
+tags: [python, django, celery]
 ---
 
 This is first art from series about Celery 4 configurations and quirks.

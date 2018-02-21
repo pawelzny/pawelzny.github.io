@@ -3,6 +3,7 @@ layout: post
 title: "Celery 4 tasks - best practices"
 date: 2017-08-14 00:00:00 +0200
 categories: [python, celery]
+tags: [python, celery]
 ---
 
 This is third article from series. Check out previous two about

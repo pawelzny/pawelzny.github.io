@@ -3,6 +3,7 @@ layout: post
 title: "Send emails from Django"
 date: 2017-06-27 00:00:00 +0200
 categories: [python, django]
+tags: [python, django, email]
 ---
 
 Add this configurations in your `settings.py`

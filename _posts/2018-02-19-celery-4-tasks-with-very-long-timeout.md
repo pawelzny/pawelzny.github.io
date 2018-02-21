@@ -3,6 +3,7 @@ layout: post
 title: "Celery 4 tasks with very long timeout"
 date: 2018-02-19 14:30:00 +0200
 categories: [python, celery]
+tags: [python, celery]
 ---
 
 Delaying tasks is not obvious and as always when Celery comes in we must take care about few things.

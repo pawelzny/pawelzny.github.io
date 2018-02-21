@@ -3,6 +3,7 @@ layout: post
 title: "Toggle TouchPad shortcut"
 date: 2018-02-21 14:29:00 +0200
 categories: [shell]
+tags: [shell, ubuntu, touchpad]
 ---
 
 On my MSI laptop I was able to enable and disable touchpad with `fn + F3` shortcut.

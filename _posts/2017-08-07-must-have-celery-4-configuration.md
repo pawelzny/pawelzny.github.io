@@ -3,6 +3,7 @@ layout: post
 title: "Must have Celery 4 configuration"
 date: 2017-08-07 00:00:00 +0200
 categories: [python, celery]
+tags: [python, celery]
 ---
 
 Last time we talk about basic configuration of Celery in Django project.

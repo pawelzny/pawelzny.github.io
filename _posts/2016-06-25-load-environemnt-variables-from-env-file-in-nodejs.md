@@ -3,6 +3,7 @@ layout: post
 title: "Load environment variables from .env file in Nodejs"
 date: 2016-06-25 00:00:00 +0200
 categories: [nodejs, javascript]
+tags: [javascript, dotenv]
 ---
 
 Dotenv-loader module helps setting environment variables from .env file on runtime.

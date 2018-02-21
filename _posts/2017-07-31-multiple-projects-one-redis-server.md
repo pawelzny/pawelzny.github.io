@@ -3,6 +3,7 @@ layout: post
 title: "Multiple Celery projects with one Redis server"
 date: 2017-07-31 00:00:00 +0200
 categories: [python, celery]
+tags: [python, redis, celery]
 ---
 
 This is second article from series about Celery 4. If you miss first article,

@@ -3,6 +3,7 @@ layout: post
 title: "Free SSL certificates"
 date: 2018-02-19 16:01:00 +0200
 categories: [ssl]
+tags: [ssl]
 ---
 
 Say Hi to Let's Encrypt.
