@@ -5,7 +5,7 @@ date: 2018-02-19 16:31:00 +0200
 categories: [ssl]
 ---
 
-App development may be imposible if external resources require connection over HTTPS.
+App development may be impossible if external resources require connection over HTTPS.
 For example Facebook Messenger require HTTPS connections in both directions.
 
 This is more than likely that your dev machine doesn't have public IP and installed SSL cert.
@@ -31,7 +31,7 @@ $ sudo vim /etc/apache2/sites-available/tunnel.conf
 ```
 
 Copy and paste configuration and change `tunnel.domain.com` for your preference.
-I choose to redirect on port 24001 because in general it is unused.
+I choose to redirect on port 24001 because in general it's unused.
 Read about well known port numbers [https://www.webopedia.com/quick_ref/portnumbers.asp](https://www.webopedia.com/quick_ref/portnumbers.asp)
 
 ```apache

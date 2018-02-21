@@ -29,7 +29,7 @@ $ ./certbot-auto --help
 Read more about installation in official documentation [https://certbot.eff.org/docs/install.html](https://certbot.eff.org/docs/install.html)
 
 Before you go with Certbot, make sure you have already configured your domain without SSL.
-Domain is pointing to server IP, and you have access to website over http.
+Domain is pointing to server IP, and you have access to website over HTTP.
 
 In most cases you only have to run Certbot and follow the instructions.
 However when I ran Certbot with default arguments I had trouble with permissions and authentication.
@@ -44,7 +44,7 @@ $ sudo certbot --authenticator standalone \
                --post-hook "apachectl start"
 ```
 
-Alternatively
+Alternatively:
 
 ```console
 $ sudo ./path/to/certbot-auto --authenticator standalone \

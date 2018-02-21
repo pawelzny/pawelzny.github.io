@@ -75,6 +75,10 @@ div.content pre {
   border: none;
 }
 
+pre code {
+  white-space: unset !important;
+}
+
 div.content .highlight {
   background: #333333;
 }

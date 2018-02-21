@@ -17,7 +17,7 @@ $ sudo su username
 $ vim ~/.bashrc
 ```
 
-At the end of file paste these lines:
+At the end of the file copy and paste these lines:
 
 ```sh
 parse_git_branch() {
@@ -28,7 +28,7 @@ export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 
 Linux read configuration files in sequence so in case you want to change **PS1** prompt,
 changes have to be made in `.bashrc` file.
-To make the changes visible reopen terminal, relogin or source `.bashrc`.
+To make the changes visible reopen terminal, re-login or source `.bashrc`.
 
 ```console
 $ source ~/.bashrc

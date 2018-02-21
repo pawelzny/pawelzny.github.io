@@ -15,7 +15,7 @@ thank You very much for contribution to community.
 I've made slight modification to increase readability.
 I've changed urgency level and icons to those which can be found in Ubuntu 17.10.
 
-First of all check TouchPad ID in your machine.
+First of all check TouchPad ID on your machine.
 
 ```console
 $ xinput list | grep -i touchpad
