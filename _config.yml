@@ -49,8 +49,11 @@ per_page: 30
 paginate_path: "/page/:num/"
 permalink: pretty
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 highlighter: rouge
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-gist
   - rouge

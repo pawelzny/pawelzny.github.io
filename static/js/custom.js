@@ -3,7 +3,7 @@ $(function () {
 
   $heading.filter('[id]').each(function () {
     $(this).append(' <a href="#' + $(this).attr('id') + '" ' +
-      'class="paragraph-link" style="display:none"><i class="fa fa-link"></i></a>');
+      'class="paragraph-link" style="display:none"><i class="fas fa-link"></i></a>');
   });
 
   $heading

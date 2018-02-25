@@ -4,10 +4,10 @@
   <!-- Twitter -->
   <a class="twitter-share-button"
      href="https://twitter.com/intent/tweet?via={{ site.share.twitter_username }}&text={{ page.title }}&url={{ site.url }}{{ page.url }}&hashtags={{ page.tags  | join:',' }}">
-    <i class="fa fa-twitter"></i> Tweet
+    <i class="fab fa-twitter"></i> Tweet
   </a>
   <script>
-    document.getElementsByClassName('twitter-share-button').forEach(item => item.href = decodeURIComponent(item.href))
+    document.querySelectorAll('.twitter-share-button').forEach(item => item.href = decodeURIComponent(item.href))
   </script>
 
   <script>window.twttr = (function (d, s, id) {
@@ -26,10 +26,6 @@
 
     return t;
   }(document, "script", "twitter-wjs"));</script>
-
-  <!-- Google + -->
-  <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   <!-- Facebook -->
   <div class="fb-share-button" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count"
