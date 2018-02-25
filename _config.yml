@@ -35,11 +35,15 @@ share:
   fb_appid:
 
 urls:
-    - text: About Me
+    - text: <i class="fas fa-home"></i> Home
+      url: "/"
+    - text: <i class="fas fa-user-circle"></i> About Me
       url: /about/
+    - text: <i class="fas fa-sitemap"></i> Categories
+      url: /category/
 #    - text: My Projects
 #      url: /projects/
-    - text: XML Feed
+    - text: <i class="fas fa-rss-square"></i> XML Feed
       url: /feed.xml
 
 url: "https://pawelzny.com"

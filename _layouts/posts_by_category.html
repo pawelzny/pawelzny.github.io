@@ -43,7 +43,9 @@ layout: default
         </div>
       {% endif %}
     {% endfor %}
+  {% else if page.categories == nil %}
+    <p>Select category from above.</p>
   {% else %}
-    <p>There are no posts in this categories.</p>
+    <p>There are no posts in this category.</p>
   {% endif %}
 </div>
