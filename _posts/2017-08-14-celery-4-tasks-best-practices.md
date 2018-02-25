@@ -11,7 +11,7 @@ This is third article from series. Check out previous two about
 and [must have Celery 4 configuration]({% post_url 2017-08-07-must-have-celery-4-configuration %}).
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
+    <i class="fas fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
 </div>
 
 ## Set name for every task
@@ -62,11 +62,11 @@ worker will listen only for default queue.
 Run worker with command:
 
 ```console
-(venv)$ celery -A proj worker -l info -Q default,low_priority,high_priority
+(venv) $ celery -A proj worker -l info -Q default,low_priority,high_priority
 ```
 
 <div class="alert alert-warning" role="alert">
-    <i class="fa fa-exclamation-triangle"></i> <strong>WARNING!</strong> <br>
+    <i class="fas fa-exclamation-triangle"></i> <strong>WARNING!</strong> <br>
     Celery 4 has nasty, very hard to find bug in worker.
     <p>
         It works only with 4 defined queues after <code class="highlighter-rouge">-Q</code>
@@ -79,17 +79,17 @@ Where is profit in this approach? Obviously in concurrency.
 `-c` parameter defines how many concurrent threads worker create.
 
 ```console
-(venv)$ celery -A proj worker -l info -Q default -c 2
-(venv)$ celery -A proj worker -l info -Q low_priority -c 1
-(venv)$ celery -A proj worker -l info -Q high_priority -c 4
+(venv) $ celery -A proj worker -l info -Q default -c 2
+(venv) $ celery -A proj worker -l info -Q low_priority -c 1
+(venv) $ celery -A proj worker -l info -Q high_priority -c 4
 ```
 
 And with auto scaling workers
 
 ```console
-(venv)$ celery -A proj worker -l info -Q default --autoscale 4,2
-(venv)$ celery -A proj worker -l info -Q low_priority --autoscale 2,1
-(venv)$ celery -A proj worker -l info -Q high_priority --autoscale 8,4
+(venv) $ celery -A proj worker -l info -Q default --autoscale 4,2
+(venv) $ celery -A proj worker -l info -Q low_priority --autoscale 2,1
+(venv) $ celery -A proj worker -l info -Q high_priority --autoscale 8,4
 ```
 
 This way you can control tasks consumption speed.
@@ -126,7 +126,7 @@ def fetch_data():
 ```
 
 <div class="alert alert-warning">
-    <i class="fa fa-exclamation-triangle"></i> <strong>WARNING!</strong><br>
+    <i class="fas fa-exclamation-triangle"></i> <strong>WARNING!</strong><br>
     <code class="highlighter-rouge">max_retries</code>
     works only with <code class="highlighter-rouge">auto_retry</code>
     and <code class="highlighter-rouge">self.retry</code>

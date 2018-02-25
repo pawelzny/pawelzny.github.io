@@ -7,7 +7,7 @@ tags: [shell, git]
 ---
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br>
+    <i class="fas fa-info-circle"></i> <strong>INFO</strong><br>
     This tutorial is for Linux, Debian family.
 </div>
 

@@ -15,7 +15,7 @@ Read more on [https://sentry.io/welcome/](https://sentry.io/welcome/)
 Sentry comes with ready to use SDK package compatible with Python 2.7 and 3.x.
 
 ```console
-(venv)$ pip install raven; pip freeze | grep raven >> requirements.txt
+(venv) $ pip install raven; pip freeze | grep raven >> requirements.txt
 ```
 
 or with pipenv:

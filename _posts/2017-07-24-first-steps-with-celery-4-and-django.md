@@ -18,7 +18,7 @@ Followed by [Wikipedia](https://en.wikipedia.org/wiki/Celery_(software)):
 > operations in real time.
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
+    <i class="fas fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
 </div>
 
 Celery 4 gives you ability to place all configuration in `settings.py` with rest Django
@@ -90,5 +90,5 @@ Run worker with `-A proj` argument where `proj` is your main django app director
 where `celery.py` exists.
 
 ```console
-(venv)$ celery -A proj worker -l info
+(venv) $ celery -A proj worker -l info
 ```

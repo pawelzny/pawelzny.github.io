@@ -9,7 +9,7 @@ tags: [python, celery]
 Delaying tasks is not obvious and as always when Celery comes in we must take care about few things.
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br>
+    <i class="fas fa-info-circle"></i> <strong>INFO</strong><br>
     This article is about Celery 4.0 and 4.1. If you come from the future, this may also apply to you.
 </div>
 

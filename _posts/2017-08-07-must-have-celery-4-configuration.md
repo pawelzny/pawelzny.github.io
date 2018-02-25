@@ -11,7 +11,7 @@ If you missed that, please see this article before further reading
 [First steps with celery 4 and Django]({% post_url 2017-07-24-first-steps-with-celery-4-and-django %})
 
 <div class="alert alert-info">
-    <i class="fa fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
+    <i class="fas fa-info-circle"></i> <strong>INFO</strong><br> This article is about Celery 4.0.2
 </div>
 
 I will extend configuration from first article with more options, but this is not full list.
@@ -84,5 +84,5 @@ app.conf.worker_prefetch_multiplier = 1
 Run worker
 
 ```console
-(venv)$ celery -A proj worker -l info
+(venv) $ celery -A proj worker -l info
 ```
