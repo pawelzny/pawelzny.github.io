@@ -4,8 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a tech leader focused on Python and chatbots.
-On my blog I write about confusing or poorly documented features
+I write about confusing or poorly documented features
 of tools and libraries I use.
 
 Every single post is an essence from what I have learn from
