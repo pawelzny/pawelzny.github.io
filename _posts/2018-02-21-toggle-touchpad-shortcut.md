@@ -71,4 +71,6 @@ $ sudo chmod a+x /usr/bin/toggle-touchpad
 Go to `settings` --> `devices` --> `keyboard`
 and create custom shortcut `Super+T` for `/usr/bin/toggle-touchpad` script.
 
-![My helpful screenshot]({{ "/static/img/toggle-touchpad-shortcut.png" | absolute_url }})
+<img src="{{ "/assets/img/toggle-touchpad-shortcut.png" | absolute_url }}"
+     alt="My helpful screenshot"
+     class="img-fluid rounded mx-auto d-block"/>

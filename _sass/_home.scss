@@ -1,0 +1,74 @@
+body {
+  background: url("/assets/img/subtle_dots.png");
+}
+
+li.post {
+  padding-bottom: .1rem;
+  span {
+    font-style: italic;
+    color: #666666;
+  }
+  &:hover {
+    background-color: #fbfbfb;
+  }
+}
+
+article.post {
+  nav {
+    display: block;
+    text-align: center;
+  }
+  .time, .categories {
+    color: #adadad;
+    padding-bottom: 15px;
+    font-size: .9rem;
+  }
+  .content {
+    display: block;
+    margin: 15px auto;
+  }
+  .navigation {
+    font-size: 14px;
+    display: block;
+    overflow: hidden;
+    a {
+      display: inline-block;
+      width: 50%;
+      margin: 1em 0;
+    }
+    .prev {
+      float: left;
+      text-align: left;
+    }
+    .next {
+      float: right;
+      text-align: right;
+    }
+  }
+  .disqus-comments {
+    display: block;
+    margin: 20px auto 30px auto;
+  }
+  .share-page {
+    padding: 10px 10px 5px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
+
+.top-spacer {
+  background-color: #1c94ff;
+  width: 100%;
+  height: 6px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #585858;
+  font-weight: normal;
+}
+
+footer {
+  padding: 10px 0;
+  color: #a3a3a3;
+  font-size: .9rem;
+}
