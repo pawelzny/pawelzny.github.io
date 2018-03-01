@@ -9,14 +9,23 @@ tags: [celery, supervisord]
 Supervisor is a client/server system that allows its users to monitor
 and control a number of processes on UNIX-like operating systems.
 
-> It shares some of the same goals of programs like launchd,
-> daemontools, and runit. Unlike some of these programs,
-> it is not meant to be run as a substitute for init as “process id 1”.
->
-> Instead it is meant to be used to control processes related to
-> a project or a customer, and is meant to start
-> like any other program at boot time.
-> -- <cite>[supervisord.org](http://supervisord.org)</cite>
+<blockquote>
+  <p>
+    It shares some of the same goals of programs like launchd,
+    daemontools, and runit. Unlike some of these programs,
+    it is not meant to be run as a substitute for init as “process id 1”.
+  </p>
+  <p class="mb-0">
+    Instead it is meant to be used to control processes related to
+    a project or a customer, and is meant to start like any other program at boot time.
+  </p>
+  <footer>
+    Official Documentation
+    <cite title="supervisord.org">
+      <a href="http://supervisord.org/">http://supervisord.org/</a>
+    </cite>
+  </footer>
+</blockquote>
 
 Celery has to be run in it's own process, separately from main app.
 To ensure Celery is always up even after crash or system reboot we
