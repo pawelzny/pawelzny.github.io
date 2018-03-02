@@ -4,13 +4,22 @@ categories: celery
 title: Celery
 permalink: /category/celery
 description: >-
-    List of all posts in category 'Celery'.
     Celery is an asynchronous task queue/job queue based on distributed
-    message passing. It is focused on real-time operation, but supports
-    scheduling as well.
+    message passing. It is focused on real-time operation,
+    but supports scheduling as well.
 ---
-<p class="lead">
-Celery is an asynchronous task queue/job queue based on distributed
-message passing. <br>
-It is focused on real-time operation, but supports scheduling as well.
-</p>
+<blockquote>
+  <p>
+    Celery is an asynchronous task queue/job queue based on distributed
+    message passing. It is focused on real-time operation,
+    but supports scheduling as well.
+  </p>
+  <footer>
+    Official documentation
+    <cite title="celeryproject.com">
+      <a href="https://www.celeryproject.com/">
+        https://www.celeryproject.com/
+      </a>
+    </cite>
+  </footer>
+</blockquote>

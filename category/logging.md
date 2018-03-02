@@ -4,13 +4,26 @@ categories: logging
 title: Logging
 permalink: /category/logging
 description: >-
-    List of all posts in category 'Logging'.
-    A log, in a computing context, is the automatically produced and
-    time-stamped documentation of events relevant to a particular system.
-    Virtually all software applications and systems produce log files.
+    In computing, a log file is a file that records either events that
+    occur in an operating system or other software runs or messages
+    between different users of a communication software.
+    Logging is the act of keeping a log. In the simplest case, messages
+    are written to a single log file.
 ---
-<p class="lead">
-A log, in a computing context, is the automatically produced and
-time-stamped documentation of events relevant to a particular system.
-Virtually all software applications and systems produce log files.
-</p>
+<blockquote>
+  <p>
+    In computing, a log file is a file that records either events that
+    occur in an operating system or other software runs or messages
+    between different users of a communication software.
+    <strong>Logging</strong> is the act of keeping a log.
+    In the simplest case, messages are written to a single log file.
+  </p>
+  <footer>
+    Wikipedia
+    <cite title="Log_file (logging)">
+      <a href="https://en.wikipedia.org/wiki/Log_file">
+        https://en.wikipedia.org/wiki/Log_file
+      </a>
+    </cite>
+  </footer>
+</blockquote>

@@ -4,15 +4,22 @@ categories: javascript
 title: JavaScript
 permalink: /category/javascript
 description: >-
-    List of all posts in category 'JavaScript'.
-    JavaScript is a cross-platform, object-oriented scripting language.
-    It is a small and lightweight language. Inside a host environment
-    (for example, a web browser), JavaScript can be connected to the
-    objects of its environment to provide programmatic control over them.
+    JavaScript is a prototype-based, multi-paradigm, dynamic language,
+    supporting object-oriented, imperative, and declarative
+    (e.g. functional programming) styles.
 ---
-<p class="lead">
-JavaScript is a cross-platform, object-oriented scripting language.
-It is a small and lightweight language. Inside a host environment
-(for example, a web browser), JavaScript can be connected to the
-objects of its environment to provide programmatic control over them.
-</p>
+<blockquote>
+  <p>
+    JavaScript is a prototype-based, multi-paradigm, dynamic language,
+    supporting object-oriented, imperative, and declarative
+    (e.g. functional programming) styles.
+  </p>
+  <footer>
+    MDN web docs
+    <cite title="JavaScript">
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript
+      </a>
+    </cite>
+  </footer>
+</blockquote>
