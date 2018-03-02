@@ -15,9 +15,11 @@ layout: default
         {% endfor %}
       {% endfor %}
     </nav>
-    <h1>Articles by category: {{ page.categories }}</h1>
+    <h1>Articles by category: {{ page.title }}</h1>
   </header>
-
+  <div class="row">
+    <div class="col">{{ content }}</div>
+  </div>
   <div class="content">
     {% if site.categories[page.categories] %}
       {% for post in site.categories[page.categories] %}
