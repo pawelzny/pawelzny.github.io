@@ -1,3 +1,6 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +17,7 @@
         content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}"/>
   <meta name="keywords"
         content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}"/>
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed_old.xml">
   <meta name="google-site-verification" content="WYfphQvAyh3e15Lh90UvwoM6qon1aZwsCqs4TUa489o"/>
 
   <meta property="og:site_name" content="{{ site.title }}">
@@ -107,7 +110,6 @@
   </script>
 </head>
 <body>
-<div class="top-spacer"></div>
 <div class="container">
   {% include header.html %}
   {% include search-bar.html %}
