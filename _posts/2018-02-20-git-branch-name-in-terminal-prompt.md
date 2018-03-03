@@ -6,6 +6,7 @@ categories: [shell]
 tags: [shell, git]
 description: >-
   Code snippet which allow to render GIT branch name in terminal prompt.
+image: /assets/img/git-branch-in-terminal.png
 ---
 When developing its nice to know on what GIT branch we are working on.
 Instead of typing `git status` every time to check branch name,
@@ -44,3 +45,7 @@ To make the changes visible reopen terminal, re-login or source `.bashrc`.
 ```console
 $ source ~/.bashrc
 ```
+
+<div class="col text-center">
+<img src="{{ "/assets/img/git-branch-in-terminal.png" | absolute_url }}" class="img-fluid rounded" />
+</div>
