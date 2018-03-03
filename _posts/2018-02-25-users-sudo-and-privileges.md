@@ -4,6 +4,8 @@ title: "Users, sudo and privileges"
 date: 2018-02-25 15:31:00 +0200
 categories: [shell]
 tags: [shell, users, sudo]
+description: >-
+  Quick example of how to manage user's privileges on Linux.
 ---
 
 Regardless of whether we work on existing users or create new ones.

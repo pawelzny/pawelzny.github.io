@@ -4,6 +4,9 @@ title: "Tired of typing 'python manage.py'?"
 date: 2018-02-26 10:03:00 +0200
 categories: [shell, django]
 tags: [django, manage, shell]
+description: >-
+  Create shortcut for most frequently used command when developing
+  with Django framework.
 ---
 
 Using lots of Django commands in a row can be tiring.

@@ -4,6 +4,10 @@ title: "Toggle TouchPad shortcut"
 date: 2018-02-21 14:29:00 +0200
 categories: [shell]
 tags: [shell, ubuntu, touchpad]
+description: >-
+  Working on laptop with touchpad enabled can be annoying.
+  Quick tutorial of how to make shell script to toggle touchpad on-off
+  with keyboard shortcut.
 ---
 
 On my MSI laptop I was able to enable and disable touchpad with `fn + F3` shortcut.

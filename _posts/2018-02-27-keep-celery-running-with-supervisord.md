@@ -4,6 +4,7 @@ title: "Keep Celery running with Supervisord"
 date: 2018-02-27 09:19:00 +0200
 categories: [celery]
 tags: [celery, supervisord]
+description: How to use Supervisor daemon to keep Celery up and running.
 ---
 
 Supervisor is a client/server system that allows its users to monitor
