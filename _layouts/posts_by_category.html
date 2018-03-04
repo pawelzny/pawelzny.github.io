@@ -20,25 +20,25 @@ layout: default
         {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
         {% if forloop.first %}
             <h4>{{ post_year }}</h4>
-            <div class="list-group">
-        {% endif %}
-
-        {% if forloop.first == false %}
+            <ol reversed>
+        {% else %}
           {% assign previous_index = forloop.index0 | minus: 1 %}
           {% capture previous_post_year %}{{ site.categories[page.categories][previous_index].date | date: '%Y' }}{% endcapture %}
           {% if post_year != previous_post_year %}
-            </div>
+            </ol>
             <h4>{{ post_year }}</h4>
-            <div class="list-group">
+            <ol reversed>
           {% endif %}
         {% endif %}
-          <ul class="posts">
-            <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
-          </ul>
-        {% if forloop.last %}
-          </div>
-        {% endif %}
+          <li class="post">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <span class="break-sm">
+              <i class="fas fa-angle-double-right"></i>
+              <span class="float-md-right">{{ post.date | date_to_string }}</span>
+            </span>
+          </li>
       {% endfor %}
+      </ol>
     {% else if page.categories == nil %}
       <p>Select category from above.</p>
     {% else %}

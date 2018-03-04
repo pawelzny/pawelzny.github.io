@@ -18,7 +18,7 @@ article.post {
     display: block;
     text-align: center;
   }
-  .time, .categories {
+  .time, .categories, .tags {
     color: #adadad;
     padding-bottom: 15px;
     font-size: .9rem;
@@ -90,12 +90,6 @@ blockquote {
 
 .e404 {
   margin: 30px auto;
-}
-
-.categories {
-  &-nav {
-    padding: 15px auto !important;
-  }
 }
 
 .btn-space {
