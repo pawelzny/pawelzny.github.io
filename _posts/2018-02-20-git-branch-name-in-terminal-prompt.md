@@ -4,7 +4,7 @@ title: "GIT branch name in terminal prompt"
 permalink: "/shell/2018/02/20/git-branch-name-in-terminal-prompt/"
 date: 2018-02-20 08:55:00 +0200
 categories: [shell]
-tags: [shell, git, bash, terminal]
+tags: [git, shell, bash, terminal]
 description: >-
   Code snippet which allow to render GIT branch name in terminal prompt.
 image: /assets/img/git-branch-in-terminal-at-pawelzny.com.png

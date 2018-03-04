@@ -4,7 +4,7 @@ title: "Load environment variables from .env file in Nodejs"
 permalink: "/nodejs/javascript/2016/06/25/load-environemnt-variables-from-env-file-in-nodejs/"
 date: 2016-06-25 00:00:00 +0200
 categories: [nodejs, javascript]
-tags: [javascript, dotenv, environment, npm]
+tags: [javascript, dotenv, environment, npm, nodejs]
 description: >-
   Tutorial how to use dotenv-loader package to manage environment
   variables along with custom variables using .env file.
