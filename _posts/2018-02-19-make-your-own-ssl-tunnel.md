@@ -4,6 +4,9 @@ title: "Make your own SSL tunnel"
 date: 2018-02-19 16:31:00 +0200
 categories: [ssl]
 tags: [ssl, tunnel]
+description: >-
+  Build your own SSL Tunnel to work locally with services
+  which required SSL to communicate. No public IP required.
 ---
 
 App development may be impossible if external resources require connection over HTTPS.

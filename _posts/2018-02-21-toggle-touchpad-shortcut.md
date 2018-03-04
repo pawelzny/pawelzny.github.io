@@ -8,6 +8,7 @@ description: >-
   Working on laptop with touchpad enabled can be annoying.
   Quick tutorial of how to make shell script to toggle touchpad on-off
   with keyboard shortcut.
+image: /assets/img/toggle-touchpad-shortcut-at-pawelzny.com.png
 ---
 
 On my MSI laptop I was able to enable and disable touchpad with `fn + F3` shortcut.
@@ -36,6 +37,7 @@ $ sudo vim /usr/bin/toggle-touchpad
 ```
 
 Copy and paste below script, and change `xinput_id=15` to ID of TouchPad on your machine.
+Touchpad icons are available on Ubuntu 17. You can use any images from any directory.
 
 ```sh
 #!/bin/bash
@@ -75,6 +77,6 @@ $ sudo chmod a+x /usr/bin/toggle-touchpad
 Go to `settings` --> `devices` --> `keyboard`
 and create custom shortcut `Super+T` for `/usr/bin/toggle-touchpad` script.
 
-<img src="{{ "/assets/img/toggle-touchpad-shortcut.png" | absolute_url }}"
-     alt="My helpful screenshot"
+<img src="{{ "/assets/img/toggle-touchpad-shortcut-at-pawelzny.com.png" | absolute_url }}"
+     alt="Screenshot of Ubuntu keyboard shortucts settings @pawelzny"
      class="img-fluid rounded mx-auto d-block"/>

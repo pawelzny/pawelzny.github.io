@@ -27,10 +27,10 @@ about: >-
   web development, server side tools and chatbots with natural language processing.
   Now there is a new challenge for me in Network Automation or SDN as you like.
   I treat my blog as personal documentation. A place to which I return if I forget something
-  instead of googling this one solution which actually worked for me.
+  instead of googling again this one solution which actually worked.
 author: Pawel Zadrozny
 nickname: '@pawelzny'
-avatar: /assets/img/avatar.jpg
+avatar: /assets/img/pawelzny-avatar.jpg
 github: https://github.com/pawelzny
 
 baseurl: "" # the subpath of your site, e.g. /blog

@@ -2,13 +2,15 @@
   <div class="col-sm-12 col-md-3">
     <div class="author-avatar text-center text-md-right">
       <a href="/">
-        <img class="rounded" src="{{ site.avatar }}"
-             alt="Avatar, face of pawelzny in yellowish hue"/>
+        <img class="rounded" src="{{ site.avatar | absolute_url }}"
+             alt="Avatar, face of pawelzny in yellowish hue."/>
       </a>
     </div>
   </div>
   <div class="col-sm-12 col-md-9 text-center text-md-left">
-    <h1 class="author-name">{{ site.author }}</h1>
+    <a href="/">
+      <h1 class="author-name">{{ site.author }}</h1>
+    </a>
     <h3 class="author-nickname">{{ site.nickname }}</h3>
     <ul class="list-inline author-social">
       <li class="list-inline-item">

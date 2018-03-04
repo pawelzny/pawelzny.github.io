@@ -4,6 +4,9 @@ title: "Free SSL certificates"
 date: 2018-02-19 16:01:00 +0200
 categories: [ssl]
 tags: [ssl]
+description: >-
+  Get free SSL certificate from Let's Encrypt authority.
+  Tutorial how to use Certbot shell client.
 ---
 
 Say Hi to Let's Encrypt.

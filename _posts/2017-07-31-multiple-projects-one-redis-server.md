@@ -4,6 +4,9 @@ title: "Multiple Celery projects with one Redis server"
 date: 2017-07-31 00:00:00 +0200
 categories: [python, celery]
 tags: [python, redis, celery]
+description: >-
+  How to separate Redis database for multiple projects when you
+  use task/job queue service which can acquire task from other project.
 ---
 
 This is second article from series about Celery 4. If you miss first article,

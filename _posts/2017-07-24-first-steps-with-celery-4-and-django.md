@@ -4,6 +4,9 @@ title: "First steps with Celery 4 and Django"
 date: 2017-07-24 00:00:00 +0200
 categories: [python, celery, django]
 tags: [python, django, celery]
+description: >-
+  This is first art from series about Celery 4 configurations and quirks.
+  I will show you how to properly use Celery with Django projects.
 ---
 
 This is first art from series about Celery 4 configurations and quirks.

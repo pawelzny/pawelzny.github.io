@@ -20,6 +20,14 @@
       }
     }
   }
+  a {
+    &:hover {
+      text-decoration: none
+    }
+    &:focus, &:active {
+      outline: none;
+    }
+  }
   &-nickname {
     display: inline-block;
   }

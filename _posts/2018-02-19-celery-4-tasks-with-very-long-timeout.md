@@ -4,13 +4,17 @@ title: "Celery 4 tasks with very long timeout"
 date: 2018-02-19 14:30:00 +0200
 categories: [python, celery]
 tags: [python, celery]
+description: >-
+  Working with Celery tasks which required very long timeout.
 ---
 
-Delaying tasks is not obvious and as always when Celery comes in we must take care about few things.
+Delaying tasks is not obvious and as always when Celery comes in we must
+take care about few things.
 
 <div class="alert alert-info">
     <i class="fas fa-info-circle"></i> <strong>INFO</strong><br>
-    This article is about Celery 4.0 and 4.1. If you come from the future, this may also apply to you.
+    This article is about Celery 4.0 and 4.1. If you come from the future,
+    this may also apply to you.
 </div>
 
 ## Countdown

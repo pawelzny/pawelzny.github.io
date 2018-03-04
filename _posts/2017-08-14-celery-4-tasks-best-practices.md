@@ -4,6 +4,8 @@ title: "Celery 4 tasks - best practices"
 date: 2017-08-14 00:00:00 +0200
 categories: [python, celery]
 tags: [python, celery]
+description: >-
+  Best practices when working with Celery 4 asynchronous task queues.
 ---
 
 This is third article from series. Check out previous two about
