@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Keep Celery running with Supervisord"
+permalink: "/celery/2018/02/27/keep-celery-running-with-supervisord/"
 date: 2018-02-27 09:19:00 +0200
 categories: [celery]
 tags: [celery, supervisord]

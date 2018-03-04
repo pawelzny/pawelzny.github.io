@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Users, sudo and privileges"
+permalink: "/shell/2018/02/25/users-sudo-and-privileges/"
 date: 2018-02-25 15:31:00 +0200
 categories: [shell]
 tags: [shell, users, sudo]

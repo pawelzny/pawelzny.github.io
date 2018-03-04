@@ -37,7 +37,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://pawelzny.com"
 paginate: 30
 paginate_path: "/page/:num/"
-permalink: pretty
+permalink: "/:year/:month/:day/:title/"
 
 social:
   twitter: pawelzny

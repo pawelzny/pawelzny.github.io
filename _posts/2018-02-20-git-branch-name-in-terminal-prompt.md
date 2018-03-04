@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "GIT branch name in terminal prompt"
+permalink: "/shell/2018/02/20/git-branch-name-in-terminal-prompt/"
 date: 2018-02-20 08:55:00 +0200
 categories: [shell]
 tags: [shell, git]

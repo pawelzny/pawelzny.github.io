@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Load environment variables from .env file in Nodejs"
+permalink: "/nodejs/javascript/2016/06/25/load-environemnt-variables-from-env-file-in-nodejs/"
 date: 2016-06-25 00:00:00 +0200
 categories: [nodejs, javascript]
 tags: [javascript, dotenv]
