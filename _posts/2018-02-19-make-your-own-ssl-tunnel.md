@@ -4,7 +4,7 @@ title: "Make your own SSL tunnel"
 permalink: "/ssl/2018/02/19/make-your-own-ssl-tunnel/"
 date: 2018-02-19 16:31:00 +0200
 categories: [ssl]
-tags: [ssl, tunnel]
+tags: [ssl, tunnel, cert]
 description: >-
   Build your own SSL Tunnel to work locally with services
   which required SSL to communicate. No public IP required.

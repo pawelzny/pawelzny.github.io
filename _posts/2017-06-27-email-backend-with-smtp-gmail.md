@@ -4,7 +4,7 @@ title: "Send emails from Django using Gmail SMTP"
 permalink: "/python/django/2017/06/27/email-backend-with-smtp-gmail/"
 date: 2017-06-27 00:00:00 +0200
 categories: [python, django]
-tags: [python, django, email]
+tags: [python, django, email, smtp]
 description: >-
   Code snippet with email configuration for Django projects.
 ---

@@ -4,7 +4,7 @@ title: "Tired of typing 'python manage.py'?"
 permalink: "/shell/django/2018/02/26/tired-of-typing-python-manage-py/"
 date: 2018-02-26 10:03:00 +0200
 categories: [shell, django]
-tags: [django, manage, shell]
+tags: [django, manage, shell, alias]
 description: >-
   Create shortcut for most frequently used command when developing
   with Django framework.

@@ -7,6 +7,7 @@ layout: default
   </div>
 </div>
 
+{% if page.title != 'index' %}
 <article class="post mt-4">
   <header>
     <h1>Articles by category: {{ page.title }}</h1>
@@ -15,34 +16,29 @@ layout: default
     <div class="col">{{ content }}</div>
   </div>
   <div class="content">
-    {% if site.categories[page.categories] %}
-      {% for post in site.categories[page.categories] %}
-        {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
-        {% if forloop.first %}
-            <h4>{{ post_year }}</h4>
-            <ol reversed>
-        {% else %}
-          {% assign previous_index = forloop.index0 | minus: 1 %}
-          {% capture previous_post_year %}{{ site.categories[page.categories][previous_index].date | date: '%Y' }}{% endcapture %}
-          {% if post_year != previous_post_year %}
-            </ol>
-            <h4>{{ post_year }}</h4>
-            <ol reversed>
-          {% endif %}
+    {% for post in site.categories[page.categories] %}
+      {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% if forloop.first %}
+          <h4>{{ post_year }}</h4>
+          <ol reversed>
+      {% else %}
+        {% assign previous_index = forloop.index0 | minus: 1 %}
+        {% capture previous_post_year %}{{ site.categories[page.categories][previous_index].date | date: '%Y' }}{% endcapture %}
+        {% if post_year != previous_post_year %}
+          </ol>
+          <h4>{{ post_year }}</h4>
+          <ol reversed>
         {% endif %}
-          <li class="post">
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <span class="break-sm">
-              <i class="fas fa-angle-double-right"></i>
-              <span class="float-md-right">{{ post.date | date_to_string }}</span>
-            </span>
-          </li>
-      {% endfor %}
-      </ol>
-    {% else if page.categories == nil %}
-      <p>Select category from above.</p>
-    {% else %}
-      <p>There are no posts in this category.</p>
-    {% endif %}
+      {% endif %}
+        <li class="post">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <span class="break-sm">
+            <i class="fas fa-angle-double-right"></i>
+            <span class="float-md-right">{{ post.date | date_to_string }}</span>
+          </span>
+        </li>
+    {% endfor %}
+    </ol>
   </div>
 </article>
+{% endif %}

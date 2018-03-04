@@ -4,7 +4,7 @@ title: "Users, sudo and privileges"
 permalink: "/shell/2018/02/25/users-sudo-and-privileges/"
 date: 2018-02-25 15:31:00 +0200
 categories: [shell]
-tags: [shell, users, sudo]
+tags: [shell, linux, sudo]
 description: >-
   Quick example of how to manage user's privileges on Linux.
 ---

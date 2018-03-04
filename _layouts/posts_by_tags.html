@@ -7,6 +7,7 @@ layout: default
   </div>
 </div>
 
+{% if page.title != "index" %}
 <article class="post mt-4">
   <header>
     <h1>Articles by TAG: {{ page.title }}</h1>
@@ -44,3 +45,4 @@ layout: default
     </ol>
   </div>
 </article>
+{% endif %}
