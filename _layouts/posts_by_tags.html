@@ -2,12 +2,24 @@
 layout: default
 ---
 <div class="row">
-  <div class="col-12">
-    {% include categories.html %}
+  <div class="col-12 text-center">
+    <nav class="nav-category">
+      {% assign tags = site.tags | sort %}
+      {% for tag in tags %}
+        <span class="site-tag">
+          <a href="/tag/{{ tag | first | slugify }}/"
+             class="btn btn-primary btn-sm"
+             style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+              {{ tag[0] | replace:'-', ' ' }}
+              <span class="badge badge-pill">{{ tag | last | size }}</span>
+          </a>
+        </span>
+      {% endfor %}
+    </nav>
   </div>
 </div>
 
-<article class="post mt-4">
+<article class="post">
   <header>
     <h1>Articles by category: {{ page.title }}</h1>
   </header>

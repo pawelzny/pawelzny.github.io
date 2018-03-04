@@ -5,22 +5,19 @@ permalink: /404
 ---
 <div class="row">
   <div class="col-12 text-center">
-    <img src="/assets/img/nothing-to-see-here.gif" alt="Go home, you're drunk" class="img-fluid rounded e404">
+    <img src="/assets/img/nothing-to-see-here.gif"
+         class="img-fluid rounded e404"
+         alt="Nothing to see here, please disperse"/>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-12">
-    <h2>Read posts by category you are interested in</h2>
+  <div class="col-12 col-lg-6">
+    <h4>Categories</h4>
+    {% include categories.html %}
   </div>
-  <div class="col-12 text-center">
-    <nav class="nav-category">
-      {% for category in site.categories %}
-        {% capture category_slug %}{{ category | first }}{% endcapture %}
-        {% for c_slug in category_slug %}
-          <a href="/category/{{ c_slug }}" class="btn btn-sm btn-outline-dark">{{ c_slug }}</a>
-        {% endfor %}
-      {% endfor %}
-    </nav>
+  <div class="col-12 col-lg-6">
+    <h4>Tags cloud</h4>
+    {% include tags-cloud.html %}
   </div>
 </div>

@@ -28,13 +28,14 @@ article.post {
     margin: 15px auto;
   }
   .navigation {
-    font-size: 14px;
+    margin: 1.5em 0 1em 0;
+    padding: 0.8em 0;
+    font-size: 0.9rem;
     display: block;
     overflow: hidden;
     a {
       display: inline-block;
       width: 50%;
-      margin: 1em 0;
     }
     .prev {
       float: left;
@@ -91,6 +92,12 @@ blockquote {
   margin: 30px auto;
 }
 
-.nav-category {
-  margin: 15px auto;
+.categories {
+  &-nav {
+    padding: 15px auto !important;
+  }
+}
+
+.btn-space {
+  margin: 2px 0;
 }

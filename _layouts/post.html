@@ -19,34 +19,42 @@ layout: default
     {% include share-page.html %}
   </div>
 
-  <div class="similar">
-    {% assign hasSimilar = '' %}
-    {% for post in site.posts  %}
-      {% assign postHasSimilar = false %}
-        {% for tag in post.categories %}
-          {% for thisTag in page.categories %}
-            {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
-              {% if hasSimilar.size == 0 %}
-              <div class="panel-body">
-                <h4>Related Posts</h4>
-                <ul>
-              {% endif %}
-                  <li class="relatedPost">
-                    <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                    {% if post.categories %}
-                      (Categories: {% for category in post.categories %}<a href="/category/{{ category }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %})
-                    {% endif %}
-                  </li>
-            {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-            {% assign postHasSimilar = true %}
-          {% endif %}
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      {% assign hasSimilar = '' %}
+      {% for post in site.posts  %}
+        {% assign postHasSimilar = false %}
+          {% for tag in post.categories %}
+            {% for thisTag in page.categories %}
+              {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
+                {% if hasSimilar.size == 0 %}
+                <div class="panel-body">
+                  <h4>Related Posts</h4>
+                  <ul>
+                {% endif %}
+                    <li class="relatedPost">
+                      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                      {% if post.categories %}
+                        (Categories: {% for category in post.categories %}
+                        <a href="/category/{{ category }}">{{ category }}</a>
+                        {% if forloop.last == false %}, {% endif %}{% endfor %})
+                      {% endif %}
+                    </li>
+              {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+              {% assign postHasSimilar = true %}
+            {% endif %}
+          {% endfor %}
         {% endfor %}
       {% endfor %}
-    {% endfor %}
-    {% if hasSimilar.size > 0 %}
-    </ul>
+      {% if hasSimilar.size > 0 %}
+      </ul>
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
+    <div class="col-12 col-lg-4">
+      <h4>Tags cloud</h4>
+      {% include tags-cloud.html %}
+    </div>
   </div>
 
   <div class="navigation">
