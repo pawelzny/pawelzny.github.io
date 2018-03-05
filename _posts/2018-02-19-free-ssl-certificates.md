@@ -3,7 +3,7 @@ layout: post
 title: "Free SSL certificates"
 permalink: "/ssl/2018/02/19/free-ssl-certificates/"
 date: 2018-02-19 16:01:00 +0200
-categories: [ssl]
+categories: [devops]
 tags: [ssl, cert]
 description: >-
   Get free SSL certificate from Let's Encrypt authority.

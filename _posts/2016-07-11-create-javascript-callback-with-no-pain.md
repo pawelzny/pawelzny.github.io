@@ -3,7 +3,7 @@ layout: post
 title: "Create JavaScript callback with no pain"
 permalink: "/nodejs/javascript/2016/07/11/create-javascript-callback-with-no-pain/"
 date: 2016-07-11 00:00:00 +0200
-categories: [nodejs, javascript]
+categories: [backend, frontend]
 tags: [javascript, npm, nodejs]
 description: >-
   Tutorial how to use last-callback package to easily manage callbacks

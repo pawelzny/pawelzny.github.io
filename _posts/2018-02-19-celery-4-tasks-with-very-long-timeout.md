@@ -3,7 +3,7 @@ layout: post
 title: "Celery 4 tasks with very long timeout"
 permalink: "/python/celery/2018/02/19/celery-4-tasks-with-very-long-timeout/"
 date: 2018-02-19 14:30:00 +0200
-categories: [python, celery]
+categories: [backend]
 tags: [python, celery, queue]
 description: >-
   Working with Celery tasks which required very long timeout.

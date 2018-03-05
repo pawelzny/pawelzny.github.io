@@ -3,7 +3,7 @@ layout: post
 title: "Toggle TouchPad shortcut"
 permalink: "/shell/2018/02/21/toggle-touchpad-shortcut/"
 date: 2018-02-21 14:29:00 +0200
-categories: [shell]
+categories: [tools]
 tags: [shell, ubuntu, linux]
 description: >-
   Working on laptop with touchpad enabled can be annoying.
