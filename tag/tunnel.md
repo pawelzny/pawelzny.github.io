@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Tunnel
+tags: tunnel
 permalink: /tag/tunnel
 description: >-
   In computer networks, a tunneling protocol allows a network user to

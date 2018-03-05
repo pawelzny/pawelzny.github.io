@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Django
+tags: django
 permalink: /tag/django
 description: >-
     Django is a high-level Python Web framework that encourages rapid

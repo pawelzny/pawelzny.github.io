@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: DRF
+tags: drf
 permalink: /tag/drf
 description: >-
   Django REST framework is a powerful and flexible toolkit for building Web APIs.

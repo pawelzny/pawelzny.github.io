@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: GIT
+tags: git
 permalink: /tag/git
 description: >-
   Git is a free and open source distributed version control system

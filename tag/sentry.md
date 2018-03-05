@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Sentry
+tags: sentry
 permalink: /tag/sentry
 description: >-
   Open-source error tracking that helps developers monitor and fix

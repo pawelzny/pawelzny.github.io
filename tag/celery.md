@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Celery
+tags: celery
 permalink: /tag/celery
 description: >-
     Celery is an asynchronous task queue/job queue based on distributed

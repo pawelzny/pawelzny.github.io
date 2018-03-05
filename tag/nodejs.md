@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: NodeJS
+tags: nodejs
 permalink: /tag/nodejs
 description: >-
     Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript

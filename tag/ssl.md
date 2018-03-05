@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: SSL
+tags: ssl
 permalink: /tag/ssl
 description: >-
     SSL (Secure Sockets Layer) is the standard security technology for

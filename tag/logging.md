@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Logging
+tags: logging
 permalink: /tag/logging
 description: >-
     In computing, a log file is a file that records either events that

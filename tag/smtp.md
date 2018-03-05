@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: SMTP
+tags: smtp
 permalink: /tag/smtp
 description: >-
   Simple Mail Transfer Protocol (SMTP) is an Internet standard for

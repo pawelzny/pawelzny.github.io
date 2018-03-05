@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Shell
+tags: shell
 permalink: /tag/shell
 description: >-
      shell is a user interface for access to an operating system's

@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: NPM
+tags: npm
 permalink: /tag/npm
 description: >-
   NPM is the package manager for JavaScript and the world’s

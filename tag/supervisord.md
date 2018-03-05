@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Supervisord
+tags: supervisord
 permalink: /tag/supervisord
 description: >-
   Supervisor is a client/server system that allows its users to monitor

@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: WSGI
+tags: wsgi
 permalink: /tag/wsgi
 description: >-
   WSGI is the Web Server Gateway Interface. It is a specification that

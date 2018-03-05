@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Redis
+tags: redis
 permalink: /tag/redis
 description: >-
   Redis is an open source (BSD licensed), in-memory data structure

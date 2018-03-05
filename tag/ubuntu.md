@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Ubuntu
+tags: ubuntu
 permalink: /tag/ubuntu
 description: >-
   Ubuntu is an open source software operating system that runs from

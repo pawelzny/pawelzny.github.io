@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Terminal
+tags: terminal
 permalink: /tag/terminal
 description: >-
   The Linux console terminal acts as the medium for input and output

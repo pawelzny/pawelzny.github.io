@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Linux
+tags: linux
 permalink: /tag/linux
 description: >-
   Linux is a family of free and open-source software operating systems

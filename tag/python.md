@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Python
+tags: python
 permalink: /tag/python
 description: >-
     Python is an interpreted high-level programming language for

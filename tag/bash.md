@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Bash
+tags: bash
 permalink: /tag/bash
 description: >-
   Bash is the GNU Project's shell. Bash is the Bourne Again SHell.

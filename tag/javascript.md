@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: JavaScript
+tags: javascript
 permalink: /tag/javascript
 description: >-
     JavaScript is a prototype-based, multi-paradigm, dynamic language,

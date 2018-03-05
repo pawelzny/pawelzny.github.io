@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Server
+tags: server
 permalink: /tag/server
 description: >-
     In computing, a server is a computer program or a device that

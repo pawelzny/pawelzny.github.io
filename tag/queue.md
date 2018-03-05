@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Queue
+tags: queue
 permalink: /tag/queue
 description: >-
   Queue is an abstract data structure, somewhat similar to Stacks.

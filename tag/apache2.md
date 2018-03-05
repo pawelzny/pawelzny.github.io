@@ -1,6 +1,7 @@
 ---
 layout: posts_by_tags
 title: Apache2
+tags: apache2
 permalink: /tag/apache2
 description: >-
   The Apache HTTP Server Project is an effort to develop and maintain
