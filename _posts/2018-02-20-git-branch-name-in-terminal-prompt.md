@@ -9,6 +9,7 @@ description: >-
   Code snippet which allow to render GIT branch name in terminal prompt.
 image: /assets/img/git-branch-in-terminal-at-pawelzny.com.png
 ---
+
 When developing its nice to know on what GIT branch we are working on.
 Instead of typing `git status` every time to check branch name,
 let's make prompt customization to render branch name for us.

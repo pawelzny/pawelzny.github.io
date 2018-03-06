@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+
 <div class="row">
   <div class="col-12">
     {% include categories.html %}
@@ -44,8 +45,9 @@ layout: default
     {% else %}
       <div class="alert alert-info" role="alert">
         <i class="fas fa-info-circle"></i>
-        There is no post in this category. They might be moved to
-        <strong class="font-italic">{{ page.title }}</strong> tag.
+        There is no post in {{ page.title }} category. They might be moved to
+        <strong class="font-italic">#{{ page.title | downcase }}</strong> tag
+        or don't exist any more.
       </div>
       <div class="col-12 col-lg-6 offset-lg-3">
         {% include tags-cloud.html %}

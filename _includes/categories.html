@@ -1,6 +1,7 @@
 <div class="categories">
   <nav class="categories-nav text-center">
-    {% for category in site.categories %}
+    {% assign sorted_cats = site.categories | sort %}
+    {% for category in sorted_cats %}
       {% capture category_slug %}{{ category | first }}{% endcapture %}
       {% for c_slug in category_slug %}
         {% if c_slug == page.categories %}

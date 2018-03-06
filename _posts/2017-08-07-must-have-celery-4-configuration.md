@@ -3,7 +3,7 @@ layout: post
 title: "Must have Celery 4 configuration"
 permalink: "/python/celery/2017/08/07/must-have-celery-4-configuration/"
 date: 2017-08-07 00:00:00 +0200
-categories: [backend]
+categories: [development]
 tags: [python, celery, queue]
 description: >-
   Celery is not as obvious as you think. Quick example of must have,

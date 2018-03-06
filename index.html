@@ -2,6 +2,20 @@
 layout: home
 ---
 
-<h2>About Me</h2>
-<p>{{ site.about }}</p>
-<p>{{ site.description }}</p>
+<div class="row">
+  <div class="col-12 col-md-6 text-justify">
+    <h2>About Me</h2>
+    <p>{{ site.about }}</p>
+    <p>{{ site.description }}</p>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="d-block">
+      <h2>Categories</h2>
+      {% include categories.html %}
+    </div>
+    <div class="d-bloc mt-4">
+      <h2>Tags cloud</h2>
+      {% include tags-cloud.html %}
+    </div>
+  </div>
+</div>

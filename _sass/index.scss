@@ -1,3 +1,10 @@
+@import "variables";
+@import "mixins/breakpoints";
+@import "media_breakpoints";
+@import "author";
+@import "syntax";
+@import "scrollbar";
+
 body {
   background: url("/assets/img/subtle_dots.png");
 }
@@ -63,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 footer {
-  padding: 10px 0;
+  padding-bottom: 15px;
   color: #a3a3a3;
   font-size: .9rem;
 }

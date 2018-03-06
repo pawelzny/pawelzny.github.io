@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+<h2>Tags cloud</h2>
+    {% include tags-cloud.html %}
 <div class="row mt-2">
   <div class="col-12 col-lg-6 offset-lg-3">
     {% include tags-cloud.html %}
@@ -10,7 +13,7 @@ layout: default
 {% if page.title != "index" %}
 <article class="post mt-4">
   <header>
-    <h1>Articles by tag: {{ page.title }}</h1>
+    <h1>Articles with tag #{{ page.title | downcase }}</h1>
   </header>
   <div class="row">
     <div class="col">{{ content }}</div>

@@ -3,7 +3,7 @@ layout: post
 title: "First steps with Celery 4 and Django"
 permalink: "/python/celery/django/2017/07/24/first-steps-with-celery-4-and-django/"
 date: 2017-07-24 00:00:00 +0200
-categories: [backend]
+categories: [development]
 tags: [python, django, celery, tutorial, queue]
 description: >-
   This is first art from series about Celery 4 configurations and quirks.
