@@ -1,13 +1,17 @@
 ---
 layout: post
 title: "Create JavaScript callback with no pain"
+permalink: "/nodejs/javascript/2016/07/11/create-javascript-callback-with-no-pain/"
 date: 2016-07-11 00:00:00 +0200
-categories: [nodejs, javascript]
-tags: [javascript, callback]
+categories: [development]
+tags: [javascript, npm, nodejs]
+description: >-
+  Tutorial how to use last-callback package to easily manage callbacks
+  without need to check argument type and correctness.
 ---
 
 Creating function which accepts another function as last parameter is not challenging,
-but boring and tiring. It can be changed.
+but boring and tiring. Let's change it!
 
 ## Standard callback implementation
 Designing custom function which accepts callback, you need to take care of few things:

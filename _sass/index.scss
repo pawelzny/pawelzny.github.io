@@ -1,0 +1,104 @@
+@import "variables";
+@import "mixins/breakpoints";
+@import "media_breakpoints";
+@import "author";
+@import "syntax";
+@import "scrollbar";
+
+body {
+  background: url("/assets/img/subtle_dots.png");
+}
+
+li.post {
+  padding-bottom: .1rem;
+  span {
+    font-style: italic;
+    color: #666666;
+  }
+  &:hover {
+    background-color: #fbfbfb;
+  }
+}
+
+article.post {
+  nav {
+    display: block;
+    text-align: center;
+  }
+  .time, .categories, .tags {
+    color: #adadad;
+    padding-bottom: 15px;
+    font-size: .9rem;
+  }
+  .content {
+    display: block;
+    margin: 15px auto;
+  }
+  .navigation {
+    margin: 1.5em 0 1em 0;
+    padding: 0.8em 0;
+    font-size: 0.9rem;
+    display: block;
+    overflow: hidden;
+    a {
+      display: inline-block;
+      width: 50%;
+    }
+    .prev {
+      float: left;
+      text-align: left;
+    }
+    .next {
+      float: right;
+      text-align: right;
+    }
+  }
+  .disqus-comments {
+    display: block;
+    margin: 20px auto 30px auto;
+  }
+  .share-page {
+    padding: 10px 10px 5px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #585858;
+  font-weight: normal;
+}
+
+footer {
+  padding-bottom: 15px;
+  color: #a3a3a3;
+  font-size: .9rem;
+}
+
+.body {
+  background-color: white;
+  padding: 10px;
+}
+
+blockquote {
+  border-left: 5px solid #eeeeee;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  footer {
+    display: block;
+    font-size: 80%;
+    color: #6c757d;
+    padding: 10px 0 0 0 !important;
+    &:before {
+      content: "\2014 \00A0";
+    }
+  }
+}
+
+.e404 {
+  margin: 30px auto;
+}
+
+.btn-space {
+  margin: 2px 0;
+}

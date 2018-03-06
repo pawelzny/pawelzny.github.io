@@ -1,68 +1,60 @@
-title: Struggle with confusing or poorly documented features.
-description: Languages, tools and libraries.
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Struggle with confusing or poorly documented features
+description: >-
+  I write about confusing or poorly documented features of tools and libraries I use.
+  Every single post is an essence from what I have learn from documentation, other blogs, source
+  code and by mistakes I made.
+  If you find something useful, leave a comment or say Hi on Twitter or LinkedIn.
+  Everything on this blog may be wrong or even dangerous. I will be thrilled when you point any
+  mistake so everybody including me can learn.
+lead: About confusing or poorly documented features of tools and libraries I use.
+about: >-
+  I'm software engineer with few years of experience. During that time I was engaged in
+  web development, server side tools and chatbots with natural language processing.
+  Now there is a new challenge for me in Network Automation or SDN as you like.
+  I treat my blog as personal documentation. A place to which I return if I forget something
+  instead of googling again this one solution which actually worked.
 author: Pawel Zadrozny
 nickname: '@pawelzny'
+avatar: /assets/img/pawelzny-avatar.jpg
 github: https://github.com/pawelzny
-about: I write about confusing or poorly documented features of tools and libraries I use.
-disqus_shortname: pawelzny
-google_analytics: UA-55876783-5
-avatar_url: /static/img/avatar.jpg
 
-timezone: "Europe/Warsaw"
-
-enableTags: true
-tagarray: []
-
-#collections:
-#  project:
-#    output: true
-#    permalink: /project/:path/
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://pawelzny.com"
+paginate: 30
+paginate_path: "/page/:num/"
+permalink: "/:year/:month/:day/:title/"
 
 social:
-#    - icon: fa-facebook
-#      link: "#"
-    - icon: fa-twitter
-      link: "https://twitter.com/pawelzny"
-    - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/pawelzadrozny"
-    - icon: fa-stack-exchange
-      link: "https://stackexchange.com/users/7527767/pawel"
-    - icon: fa-github
-      link: "https://github.com/pawelzny"
+  twitter: pawelzny
+  linkedin: pawelzadrozny
+  stackexchange: 7527767/pawel
+  github: pawelzny
 
-share:
-  twitter_username: pawelzny
-  fb_appid:
+disqus_shortname: pawelzny
+google_analytics: UA-55876783-5
 
-urls:
-    - text: <i class="fas fa-home"></i> Home
-      url: "/"
-    - text: <i class="fas fa-user-circle"></i> About Me
-      url: /about/
-    - text: <i class="fas fa-sitemap"></i> Categories
-      url: /category/
-#    - text: My Projects
-#      url: /projects/
-    - text: <i class="fas fa-rss-square"></i> XML Feed
-      url: /feed.xml
+filename: "/sitemap.xml"
 
-url: "https://pawelzny.com"
-baseurl: ""
-paginate: 30
-per_page: 30
-paginate_path: "/page/:num/"
-permalink: pretty
+# Build settings
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-highlighter: rouge
 plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-gist
-  - rouge
-
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
+  - jekyll-sitemap

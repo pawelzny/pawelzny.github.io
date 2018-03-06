@@ -1,0 +1,45 @@
+.author {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  &-avatar {
+    display: table;
+    height: 100%;
+    width: 100%;
+    a {
+      vertical-align: middle;
+      display: table-cell;
+      &:focus {
+        outline: transparent;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      img {
+        max-width: 155px;
+        max-height: 155px;
+      }
+    }
+  }
+  a {
+    &:hover {
+      text-decoration: none
+    }
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+  &-nickname {
+    display: inline-block;
+  }
+  &-social {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 15px;
+    a {
+      color: #666666;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+html {
+  font-size: .86rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: .9rem;
+  }
+  p {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  li.post {
+    &:hover {
+      background-color: transparent !important;
+    }
+    .break-sm {
+      text-wrap: none;
+      white-space: nowrap;
+    }
+    ol, dl, ul {
+      -webkit-margin-before: .4rem !important;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.05rem;
+  }
+  p {
+    margin-bottom: 0.8rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1rem;
+  }
+}

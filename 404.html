@@ -4,6 +4,21 @@ title: 404 Page not found
 permalink: /404
 ---
 
-<div class="e404">
-  <img src="/static/img/nothing-to-see-here.gif" alt="Go home, you're drunk">
+<div class="row">
+  <div class="col-12 text-center">
+    <img src="/assets/img/nothing-to-see-here.gif"
+         class="img-fluid rounded e404"
+         alt="Nothing to see here, please disperse"/>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-lg-6">
+    <h4>Categories</h4>
+    {% include categories.html %}
+  </div>
+  <div class="col-12 col-lg-6">
+    <h4>Tags cloud</h4>
+    {% include tags-cloud.html %}
+  </div>
 </div>

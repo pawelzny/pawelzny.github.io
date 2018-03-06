@@ -1,9 +1,12 @@
 ---
 layout: post
 title: "The most complete Apache2 config for WSGI, Django and DRF"
+permalink: "/server/django/2018/02/26/the-most-complete-apache2-config-for-wsgi-django-and-drf/"
 date: 2018-02-26 10:03:00 +0200
-categories: [server, django]
-tags: [python, django, DRF, apache2, wsgi]
+categories: [devops]
+tags: [python, django, drf, apache2, wsgi, server]
+description: >-
+  Tutorial, how to configure Apache2 to work with python WSGI server.
 ---
 
 **Goal of this post:**

@@ -1,0 +1,46 @@
+<header class="row author">
+  <div class="col-sm-12 col-md-3">
+    <div class="author-avatar text-center text-md-right">
+      <a href="/">
+        <img class="rounded" src="{{ site.avatar | absolute_url }}"
+             alt="Avatar, face of pawelzny in yellowish hue."/>
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-9 text-center text-md-left">
+    <a href="/">
+      <h1 class="author-name">{{ site.author }}</h1>
+    </a>
+    <h3 class="author-nickname">{{ site.nickname }}</h3>
+    <ul class="list-inline author-social">
+      <li class="list-inline-item">
+        <a href="https://twitter.com/{{ site.social.twitter }}">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.linkedin.com/in/{{ site.social.linkedin }}">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://stackexchange.com/users/{{ site.social.stackexchange }}">
+          <i class="fab fa-stack-exchange"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://github.com/{{ site.social.github }}">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="{{ site.baseurl }}{% link feed.xml %}">
+          <i class="fas fa-rss-square"></i>
+        </a>
+      </li>
+    </ul>
+    <div class="site-lead">
+      <p class="lead">{{ site.lead }}</p>
+    </div>
+  </div>
+</header>

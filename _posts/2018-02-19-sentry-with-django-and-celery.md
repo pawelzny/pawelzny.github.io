@@ -1,9 +1,12 @@
 ---
 layout: post
 title: "Sentry with Django and Celery"
+permalink: "/python/celery/logging/django/2018/02/19/sentry-with-django-and-celery/"
 date: 2018-02-19 15:12:00 +0200
-categories: [python, celery, logging, django]
-tags: [python, django, sentry]
+categories: [development]
+tags: [python, django, sentry, queue, logging]
+description: >-
+  How to use Sentry logging service in Django project with Celery.
 ---
 
 Sentry is a service for errors log gathering and aggregation.

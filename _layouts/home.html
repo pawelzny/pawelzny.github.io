@@ -1,0 +1,60 @@
+---
+layout: page
+---
+
+<div class="row">
+  <div class="col mt-2 mt-md-4">
+    <ol reversed>
+      {% for post in paginator.posts %}
+      <li class="post">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="break-sm">
+          <i class="fas fa-angle-double-right"></i>
+          <span class="float-md-right">{{ post.date | date_to_string }}</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</div>
+
+{% if paginator.total_pages > 1 %}
+<div class="row">
+  <div class="col text-center mt-5 mb-3">
+      <nav>
+        <ul class="pagination justify-content-center">
+          {% if paginator.previous_page %}
+            <li class="page-item"><a class="page-link" href="/">First</a></li>
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.previous_page_path }}">
+                <i class="fas fa-angle-double-left"></i>
+              </a>
+            </li>
+          {% endif %}
+
+          {% for page in (1..paginator.total_pages) %}
+            <li class="page-item {% if page == paginator.page %}active{% endif %}">
+              {% if page == 1 %}
+                <a class="page-link" href="/">{{ page }}</a>
+              {% else %}
+                <a class="page-link" href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+
+          {% if paginator.next_page %}
+            <li class="page-item">
+              <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                <i class="fas fa-angle-double-right"></i>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/page/{{ paginator.total_pages }}/">Last</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+  </div>
+</div>
+{% endif %}
+
+<hr/>
+{{ content }}
