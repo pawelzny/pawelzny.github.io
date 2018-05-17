@@ -18,7 +18,7 @@ layout: compress
         content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}"/>
   <meta name="keywords"
         content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}"/>
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed_old.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
   <meta name="google-site-verification" content="WYfphQvAyh3e15Lh90UvwoM6qon1aZwsCqs4TUa489o"/>
 
   <meta property="og:site_name" content="{{ site.title }}">
@@ -107,7 +107,11 @@ layout: compress
     }
 
     gtag('js', new Date());
-    gtag('config', 'UA-55876783-5');
+    gtag('config', 'UA-55876783-5', {
+      'anonymize_ip': true,
+      'cookie_domain': 'pawelzny.com',
+      'cookie_expires': 0,
+    });
   </script>
 </head>
 <body>
