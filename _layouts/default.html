@@ -96,23 +96,6 @@ layout: compress
   <!-- Custom CSS -->
   <!--suppress HtmlUnknownTarget -->
   <link rel="stylesheet" href="/assets/css/main.css">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55876783-5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-55876783-5', {
-      'anonymize_ip': true,
-      'cookie_domain': 'pawelzny.com',
-      'cookie_expires': 0,
-    });
-  </script>
 </head>
 <body>
 <div class="container">
@@ -128,7 +111,16 @@ layout: compress
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="/assets/js/gdpr.js"></script>
+<script>
+  let gAnalytics = new GAnalytics();
+  let disqus = new Disqus("{{ site.disqus_shortname }}");
+  let gdpr = new GDPR(gAnalytics, disqus);
+
+  gdpr.renderDisclaimer('', gAnalytics.constructor.name)
+      .renderDisclaimer('', disqus.constructor.name);
+</script>
 </body>
 </html>
