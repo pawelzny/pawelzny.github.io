@@ -1,5 +1,5 @@
 function GAnalytics() {
-  this.disclaimer = 'i will use it only for good';
+  this.disclaimer = 'I agree for anonymous tracking of my activity. I acknowledge that this helps to provide more content I\'m interested in.';
 
   let gaTrackingId = 'UA-55876783-5';
   let gaDisable = 'ga-disable-' + gaTrackingId;
@@ -29,7 +29,7 @@ function GAnalytics() {
 }
 
 function Disqus(shortname) {
-  this.disclaimer = 'do you wanna disqus?';
+  this.disclaimer = 'I acknowledge that comments are available thanks to Disqus. I agree for cookies from Disqus.';
   this.shortname = shortname;
 
   this.enable = function () {
@@ -42,7 +42,7 @@ function Disqus(shortname) {
   };
   this.disable = function () {
     try {
-      DISQUS.reset()
+      DISQUS.reset();
     } catch (e) {
     }
   }
@@ -60,8 +60,12 @@ function GDPR() {
   this.renderDisclaimer = function (selector, serviceName) {
     let service = this.services[serviceName];
     let hasAgreement = this.agreements[serviceName] === false;
-    if (service && ! hasAgreement) {
-      // render agreement disclaimer for service
+    if (service && !hasAgreement) {
+      let disclaimer = $(selector);
+      disclaimer.find('.disclaimer-text').text(service.disclaimer);
+      disclaimer.find('.disclaimer-agree').on('click', function (event) {
+        console.log(event);
+      });
     }
 
     return this;

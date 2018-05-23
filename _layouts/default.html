@@ -101,6 +101,16 @@ layout: compress
 <div class="container">
   {% include header.html %}
   {% include search-bar.html %}
+  <div id="analytics-gdpr" class="row gdpr-disclaimer">
+    <div class="col-sm-12 col-md-10 col-xl-11">
+      <span class="disclaimer-text align-middle"></span>
+    </div>
+    <div class="col-sm-12 col-md-2 col-xl-1 text-center">
+      <button class="btn btn-sm btn-primary disclaimer-agree align-middle">
+        <i class="fa fa-check"></i> Agree
+      </button>
+    </div>
+  </div>
   <hr/>
   <section class="body">
     {{ content }}
@@ -119,8 +129,8 @@ layout: compress
   let disqus = new Disqus("{{ site.disqus_shortname }}");
   let gdpr = new GDPR(gAnalytics, disqus);
 
-  gdpr.renderDisclaimer('', gAnalytics.constructor.name)
-      .renderDisclaimer('', disqus.constructor.name);
+  gdpr.renderDisclaimer('#analytics-gdpr', gAnalytics.constructor.name)
+    .renderDisclaimer('#disqus-gdpr', disqus.constructor.name);
 </script>
 </body>
 </html>

@@ -82,20 +82,22 @@ layout: default
   </div>
 
   <div class="disqus-comments">
+    <div id="disqus-gdpr" class="row gdpr-disclaimer">
+    <div class="col-sm-12 col-md-10 col-xl-11">
+      <span class="disclaimer-text align-middle"></span>
+    </div>
+    <div class="col-sm-12 col-md-2 col-xl-1 text-center">
+      <button class="btn btn-sm btn-primary disclaimer-agree align-middle">
+        <i class="fa fa-check"></i> Agree
+      </button>
+    </div>
+  </div>
+
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = "{{ site.disqus_shortname }}";
       var disqus_identifier = "{{ site.url }}_{{ page.title }}";
       var disqus_title = "{{ page.title }}";
-
-      let disqus = Disqus();
-
-      if (window.gdpr.agreements.disqus === undefined) {
-        disqus.disable();
-        disqus.agreement();
-      } else {
-        disqus.enable();
-      }
     </script>
   </div>
 </article>
