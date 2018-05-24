@@ -27,7 +27,7 @@ function GAnalytics() {
 
     Object.keys($.cookie()).forEach(key => {
       if (key.startsWith('_g')) {
-        $.removeCookie(key, {path: '/'});
+        $.removeCookie(key, {path: '/', domain: 'pawelzny.com'});
       }
     });
   };
