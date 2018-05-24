@@ -123,8 +123,8 @@ layout: compress
   let gdpr = new GDPR(gAnalytics, disqus);
 
   gdpr.renderDisclaimer('#analytics-gdpr', gAnalytics.displayName)
-    .renderDisclaimer('#disqus-gdpr', disqus.displayName);
-  gdpr.apply();
+      .renderDisclaimer('#disqus-gdpr', disqus.displayName)
+      .apply();
 </script>
 </body>
 </html>

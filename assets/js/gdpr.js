@@ -1,31 +1,31 @@
 function GAnalytics() {
   this.disclaimer = 'I agree for anonymous tracking of my activity. I acknowledge that this helps to provide more content I\'m interested in.';
   this.displayName = 'Google Analytics';
+  this.active = false;
 
   let gaTrackingId = 'UA-55876783-5';
   let gaDisable = 'ga-disable-' + gaTrackingId;
 
-  try {
-    window.dataLayer = window.dataLayer || [];
-  } catch (e) {
-  }
-
   this.enable = function () {
-    delete window[gaDisable];
+    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
+    delete window[gaDisable];
+    window.gtag = function () {
       window.dataLayer.push(arguments);
-    }
+    };
+
+    $('head').append(`<script src="https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}"></script>`);
 
     gtag('js', new Date());
     gtag('config', gaTrackingId, {
       'anonymize_ip': true,
-      // 'cookie_domain': 'pawelzny.com',
+      'cookie_domain': 'pawelzny.com',
       'cookie_expires': 0,
     });
   };
   this.disable = function () {
     window[gaDisable] = true;
+    delete window['gtag'];
   };
 }
 
@@ -33,6 +33,7 @@ function Disqus(shortname) {
   this.disclaimer = 'I acknowledge that comments are available thanks to Disqus. I agree to enable Disqus.';
   this.displayName = 'Disqus';
   this.shortname = shortname;
+  this.active = false;
 
   this.enable = function () {
     let dsq = document.createElement('script');
@@ -95,8 +96,9 @@ function GDPR() {
       } catch (e) {
       }
 
-      if (val && val.agreed === 'yes') {
+      if (val && val.agreed === 'yes' && this.services[key].active === false) {
         this.services[key].enable();
+        this.services[key].active = true;
       }
     });
   }
