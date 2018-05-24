@@ -1,5 +1,6 @@
 function GAnalytics() {
   this.disclaimer = 'I agree for anonymous tracking of my activity. I acknowledge that this helps to provide more content I\'m interested in.';
+  this.displayName = 'Google Analytics';
 
   let gaTrackingId = 'UA-55876783-5';
   let gaDisable = 'ga-disable-' + gaTrackingId;
@@ -10,16 +11,16 @@ function GAnalytics() {
   }
 
   this.enable = function () {
-    window[gaDisable] = false;
+    delete window[gaDisable];
 
     function gtag() {
-      dataLayer.push(arguments);
+      window.dataLayer.push(arguments);
     }
 
     gtag('js', new Date());
     gtag('config', gaTrackingId, {
       'anonymize_ip': true,
-      'cookie_domain': 'pawelzny.com',
+      // 'cookie_domain': 'pawelzny.com',
       'cookie_expires': 0,
     });
   };
@@ -29,7 +30,8 @@ function GAnalytics() {
 }
 
 function Disqus(shortname) {
-  this.disclaimer = 'I acknowledge that comments are available thanks to Disqus. I agree for cookies from Disqus.';
+  this.disclaimer = 'I acknowledge that comments are available thanks to Disqus. I agree to enable Disqus.';
+  this.displayName = 'Disqus';
   this.shortname = shortname;
 
   this.enable = function () {
@@ -54,24 +56,48 @@ function GDPR() {
 
   for (let i = 0; i < arguments.length; i++) {
     let service = arguments[i];
-    this.services[service.constructor.name] = service
+    this.services[service.displayName] = service;
+    this.agreements[service.displayName] = JSON.parse(localStorage.getItem(service.displayName));
   }
 
   this.renderDisclaimer = function (selector, serviceName) {
     let service = this.services[serviceName];
-    let hasAgreement = this.agreements[serviceName] === false;
+    let agreements = this.agreements;
+    let hasAgreement = agreements[serviceName] !== null;
+
     if (service && !hasAgreement) {
       let disclaimer = $(selector);
+      let self = this;
+
+      disclaimer.show();
       disclaimer.find('.disclaimer-text').text(service.disclaimer);
       disclaimer.find('.disclaimer-agree').on('click', function (event) {
-        console.log(event);
+        let $btn = $(event.currentTarget);
+        let agr = {agreed: $btn.data('agree'), when: (new Date()).toString()};
+
+        agreements[serviceName] = agr;
+
+        localStorage.setItem(serviceName, JSON.stringify(agr));
+        disclaimer.remove();
+
+        self.apply();
       });
     }
 
     return this;
   };
 
-  this.fetchAgreements = function () {};
-  this.setAgreements = function () {};
-  this.delAgreements = function () {};
+  this.apply = function () {
+    Object.keys(this.agreements).forEach(key => {
+      let val = null;
+      try {
+        val = this.agreements[key];
+      } catch (e) {
+      }
+
+      if (val && val.agreed === 'yes') {
+        this.services[key].enable();
+      }
+    });
+  }
 }
