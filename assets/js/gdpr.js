@@ -7,14 +7,12 @@ function GAnalytics() {
   let gaDisable = 'ga-disable-' + gaTrackingId;
 
   this.enable = function () {
+    delete window[gaDisable];
     window.dataLayer = window.dataLayer || [];
 
-    delete window[gaDisable];
     window.gtag = function () {
       window.dataLayer.push(arguments);
     };
-
-    $('head').append(`<script src="https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}"></script>`);
 
     gtag('js', new Date());
     gtag('config', gaTrackingId, {
@@ -26,6 +24,12 @@ function GAnalytics() {
   this.disable = function () {
     window[gaDisable] = true;
     delete window['gtag'];
+
+    Object.keys($.cookie()).forEach(key => {
+      if (key.startsWith('_g')) {
+        $.removeCookie(key, {path: '/'});
+      }
+    });
   };
 }
 
@@ -99,6 +103,9 @@ function GDPR() {
       if (val && val.agreed === 'yes' && this.services[key].active === false) {
         this.services[key].enable();
         this.services[key].active = true;
+      } else if (! val || val.agreed !== 'yes') {
+        this.services[key].disable();
+        this.services[key].active = false;
       }
     });
   }
