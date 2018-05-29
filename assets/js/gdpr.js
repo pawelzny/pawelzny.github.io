@@ -17,7 +17,6 @@ function GAnalytics() {
     gtag('js', new Date());
     gtag('config', gaTrackingId, {
       'anonymize_ip': true,
-      'cookie_domain': 'pawelzny.com',
       'cookie_expires': 0,
     });
   };
@@ -27,7 +26,7 @@ function GAnalytics() {
 
     Object.keys($.cookie()).forEach(key => {
       if (key.startsWith('_g')) {
-        $.removeCookie(key, {path: '/', domain: 'pawelzny.com'});
+        $.removeCookie(key, {path: '/'});
       }
     });
   };
