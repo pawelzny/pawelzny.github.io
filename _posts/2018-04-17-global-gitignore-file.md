@@ -40,9 +40,36 @@ For example for files which occures only on your machine.
   else JetBrains has created? - Everybody hates .idea directory!
 
 ```text
-.DS_store # macOS
-.idea/    # JetBrains
-*_old.*   # temporary backup which should not be committed
+# macOS
+.DS_store
+
+# IDE
+.idea/
+.vs_code/
+
+# temporary backup which should not be committed
+*.old.*
+*.backup.*
+
+# my own tools which helps me, but not fit in project
+*_pawelzny.*
+```
+
+**Edit [2018-09-08]:**
+
+Do not put comments in the same line as rule because git will treat them as integral part of the rule.
+
+Do:
+
+```text
+# comment
+rule
+```
+
+Don't:
+
+```text
+rule   # comment
 ```
 
 ### Add the file to git config
